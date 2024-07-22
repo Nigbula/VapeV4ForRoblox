@@ -1665,17 +1665,6 @@ do
 			end
 		until not vapeInjected
 	end)
-	local textlabel = Instance.new("TextLabel")
-	textlabel.Size = UDim2.new(1, 0, 0, 36)
-	textlabel.Text = "The current version of vape is no longer being maintained, join the discord (click the discord icon) to get updates on the latest release."
-	textlabel.BackgroundTransparency = 1
-	textlabel.ZIndex = 10
-	textlabel.TextStrokeTransparency = 0
-	textlabel.TextScaled = true
-	textlabel.Font = Enum.Font.SourceSans
-	textlabel.TextColor3 = Color3.new(1, 1, 1)
-	textlabel.Position = UDim2.new(0, 0, 1, -36)
-	textlabel.Parent = GuiLibrary.MainGui.ScaledGui.ClickGui
 end
 
 run(function()
@@ -3034,6 +3023,7 @@ run(function()
 	local originalNeckC0
 	local originalRootC0
 	local anims = {
+--vape animations
 		Normal = {
 			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.05},
 			{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.05}
@@ -3050,7 +3040,7 @@ run(function()
 			{CFrame = CFrame.new(0.69, -0.7, 0.1) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Time = 0.1},
 			{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(-179), math.rad(54), math.rad(33)), Time = 0.1}
 		},
-		["Vertical Spin"] = {
+		['Vertical Spin'] = {
 			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-90), math.rad(8), math.rad(5)), Time = 0.1},
 			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(180), math.rad(3), math.rad(13)), Time = 0.1},
 			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(90), math.rad(-5), math.rad(8)), Time = 0.1},
@@ -3060,14 +3050,1059 @@ run(function()
 			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.1},
 			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2}
 		},
-		["Exhibition Old"] = {
+		['Exhibition Old'] = {
 			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.15},
 			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.05},
 			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.1},
 			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.05},
 			{CFrame = CFrame.new(0.63, -0.1, 1.37) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.15}
-		}
-	}
+		},
+		--old dortwars's src aura anims
+		['Old Extend'] = {
+		    {CFrame = CFrame.new(3, 0, 1) * CFrame.Angles(math.rad(-60), math.rad(30), math.rad(-40)), Time = 0.1},
+            {CFrame = CFrame.new(3.3, -.2, 0.7) * CFrame.Angles(math.rad(-70), math.rad(10), math.rad(-20)), Time = 0.2},
+            {CFrame = CFrame.new(3.8, -.2, 1.3) * CFrame.Angles(math.rad(-80), math.rad(0), math.rad(-20)), Time = 0.01},
+            {CFrame = CFrame.new(3, .3, 1.3) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(-20)), Time = 0.07},
+            {CFrame = CFrame.new(3, .3, .8) * CFrame.Angles(math.rad(-90), math.rad(10), math.rad(-40)), Time = 0.07}
+		},
+		['Horizontal Spin'] = {
+		    {CFrame = CFrame.new(0.69, 0.7, 0.6) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(-80)), Time = 0.14},
+            {CFrame = CFrame.new(0.69, 0.7, 0.6) * CFrame.Angles(math.rad(-90), math.rad(90), math.rad(-100)), Time = 0.14},
+            {CFrame = CFrame.new(0.69, 0.7, 0.6) * CFrame.Angles(math.rad(-90), math.rad(180), math.rad(-100)), Time = 0.14},
+            {CFrame = CFrame.new(0.69, 0.7, 0.6) * CFrame.Angles(math.rad(-90), math.rad(270), math.rad(-80)), Time = 0.14}
+		},
+		['BlockHit'] = {
+		    {CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-70)), Time = 0.15},
+            {CFrame = CFrame.new(0.5, -0.7, -0.2) * CFrame.Angles(math.rad(-120), math.rad(60), math.rad(-50)), Time = 0.15}
+		},
+		['Rise'] = {
+		    {CFrame = CFrame.new(0.9, 0, 0) * CFrame.Angles(math.rad(-80), math.rad(60), math.rad(-40)), Time = 0.14},
+            {CFrame = CFrame.new(0.5, 0.2, -0.7) * CFrame.Angles(math.rad(-150), math.rad(55), math.rad(20)), Time = 0.14}
+		},
+		['Jab'] = {
+		    {CFrame = CFrame.new(0.8, -0.7, 0.6) * CFrame.Angles(math.rad(-40), math.rad(65), math.rad(-90)), Time = 0.15},
+            {CFrame = CFrame.new(0.6, -0.6, 0.5) * CFrame.Angles(math.rad(-45), math.rad(50), math.rad(-105)), Time = 0.1}
+		},
+		['Exhibition2'] = {
+		    {CFrame = CFrame.new(1, 0, 0) * CFrame.Angles(math.rad(-40), math.rad(40), math.rad(-80)), Time = 0.12},
+            {CFrame = CFrame.new(1, 0, -0.3) * CFrame.Angles(math.rad(-80), math.rad(40), math.rad(-60)), Time = 0.16}
+		},
+		['Smooth'] = {
+		    {CFrame = CFrame.new(1, 0, -0.5) * CFrame.Angles(math.rad(-90), math.rad(60), math.rad(-60)), Time = 0.2},
+            {CFrame = CFrame.new(1, -0.2, -0.5) * CFrame.Angles(math.rad(-160), math.rad(60), math.rad(-30)), Time = 0.12}
+		},
+		['Butter'] = {
+		    {CFrame = CFrame.new(3.0, -1.7, -1.1) * CFrame.Angles(math.rad(307), math.rad(57), math.rad(145)), Time = 0.18},
+            {CFrame = CFrame.new(3.0, -1.7, -1.3) * CFrame.Angles(math.rad(203), math.rad(57), math.rad(226)), Time = 0.14}
+		},
+		['Slash'] = {
+		    {CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.01},
+            {CFrame = CFrame.new(-1.71, -1.11, -0.94) * CFrame.Angles(math.rad(-105), math.rad(85), math.rad(7)), Time = 0.19}
+		},
+		['Slide'] = {
+		    {CFrame = CFrame.new(0.2, -0.7, 0) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.15},
+            {CFrame = CFrame.new(0.2, -1, 0) * CFrame.Angles(math.rad(23), math.rad(67), math.rad(-111)), Time = 0.3},
+            {CFrame = CFrame.new(0.2, -1, -10) * CFrame.Angles(math.rad(23), math.rad(67), math.rad(-111)), Time = 0.0},
+            {CFrame = CFrame.new(0.2, -0.7, 0) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.1},
+            {CFrame = CFrame.new(0.2, -1, 0) * CFrame.Angles(math.rad(23), math.rad(67), math.rad(-111)), Time = 0.3}
+		},
+		['Swong'] = {
+		    {CFrame = CFrame.new(0, 0, -0.6) * CFrame.Angles(math.rad(-60), math.rad(50), math.rad(-70)), Time = 0.1},
+            {CFrame = CFrame.new(0, -0.3, -0.6) * CFrame.Angles(math.rad(-160), math.rad(60), math.rad(10)), Time = 0.2}
+		},
+		['Kill X'] = {
+		    {CFrame = CFrame.new(0.8, -0.92, 0.9) * CFrame.Angles(math.rad(147), math.rad(140), math.rad(53)), Time = 0.12},
+			{CFrame = CFrame.new(0.8, -0.92, 0.9) * CFrame.Angles(math.rad(147), math.rad(45), math.rad(53)), Time = 0.12}
+		},
+		['Stab'] = {
+		    {CFrame = CFrame.new(0.69, -0.77, 1.47) * CFrame.Angles(math.rad(-33), math.rad(57), math.rad(-81)), Time = 0.1, Size = 2},
+			{CFrame = CFrame.new(0.69, -0.77, 1.47) * CFrame.Angles(math.rad(-33), math.rad(90), math.rad(-81)), Time = 0.1, Size = 5}
+		},
+		['Exhibition vertical spin'] = {
+		    {CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.15},
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.05},
+			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.1},
+			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.05},
+			{CFrame = CFrame.new(0.63, -0.1, 1.37) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.15},
+			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-90), math.rad(8), math.rad(5)), Time = 0.1},
+			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(180), math.rad(3), math.rad(13)), Time = 0.1},
+			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(90), math.rad(-5), math.rad(8)), Time = 0.1},
+			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(-0), math.rad(-0)), Time = 0.1}
+		},
+		['LiquidBounce'] = {
+		    {CFrame = CFrame.new(0, 0, -1) * CFrame.Angles(math.rad(-40), math.rad(60), math.rad(-80)), Time = 0.17},
+            {CFrame = CFrame.new(0, 0, -1) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-80)), Time = 0.17}
+		},
+		['OddSwing'] = {
+		    {CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.15},
+            {CFrame = CFrame.new(0.03, 0.07, -0.07) * CFrame.Angles(math.rad(-20), math.rad(-2), math.rad(-8)), Time = 0.15}
+		},
+		['Sigma'] = {
+		    {CFrame = CFrame.new(0.3, -0.8, -1.3) * CFrame.Angles(math.rad(160), math.rad(84), math.rad(90)), Time = 0.18},
+            {CFrame = CFrame.new(0.3, -0.9, -1.17) * CFrame.Angles(math.rad(160), math.rad(70), math.rad(90)), Time = 0.18},
+            {CFrame = CFrame.new(0.4, -0.65, -0.8) * CFrame.Angles(math.rad(160), math.rad(111), math.rad(90)), Time = 0.18}
+		},
+		['SigmaJello'] = {
+		    {CFrame = CFrame.new(0.2, 0, -1.3) * CFrame.Angles(math.rad(111), math.rad(111), math.rad(130)), Time = 0.18},
+            {CFrame = CFrame.new(0, -0.2, -1.7) * CFrame.Angles(math.rad(30), math.rad(111), math.rad(190)), Time = 0.18}
+		},
+		['Drop'] = {
+		    {CFrame = CFrame.new(-0.4, -0.7, -1.3) * CFrame.Angles(math.rad(111), math.rad(111), math.rad(130)), Time = 0.23},
+            {CFrame = CFrame.new(-0.8, -0.9, -1.7) * CFrame.Angles(math.rad(20), math.rad(130), math.rad(180)), Time = 0.23},
+            {CFrame = CFrame.new(-0.4, -0.7, -1.3) * CFrame.Angles(math.rad(111), math.rad(111), math.rad(130)), Time = 0.23},
+            {CFrame = CFrame.new(-0.8, -0.9, -1.7) * CFrame.Angles(math.rad(20), math.rad(130), math.rad(180)), Time = 0.23},
+            {CFrame = CFrame.new(-0.8, -0.6, -1) * CFrame.Angles(math.rad(20), math.rad(130), math.rad(180)), Time = 0.19}
+		},
+		['Cookless'] = {
+		    {CFrame = CFrame.new(2, -2.5, 0.2) * CFrame.Angles(math.rad(268), math.rad(54), math.rad(327)), Time = 0.17},
+            {CFrame = CFrame.new(1.6, -2.5, 0.2) * CFrame.Angles(math.rad(189), math.rad(52), math.rad(347)), Time = 0.16}
+		},
+		['Roll'] = {
+		    {CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.2},
+            {CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(295), math.rad(60), math.rad(100)), Time = 0.2}
+		},
+		['Shrink'] = {
+		    {CFrame = CFrame.new(0.3, 0, 0) * CFrame.Angles(math.rad(-2), math.rad(5), math.rad(25)), Time = 0.2},
+            {CFrame = CFrame.new(0.69, -0.71, 0.6), Time = 0.2}
+		},
+		['Push'] = {
+		    {CFrame = CFrame.new(0.2, -0.7, 0) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.2},
+            {CFrame = CFrame.new(0.2, -1, 0) * CFrame.Angles(math.rad(23), math.rad(67), math.rad(-111)), Time = 0.35}
+		},
+		['Flat'] = {
+		    {CFrame = CFrame.new(0.69, 0.7, 0.6) * CFrame.Angles(math.rad(-90), math.rad(-30), math.rad(-80)), Time = 0.15},
+            {CFrame = CFrame.new(0.69, 0.7, 0.6) * CFrame.Angles(math.rad(-90), math.rad(30), math.rad(-100)), Time = 0.15}
+		},
+		['Dortware'] = {
+		    {CFrame = CFrame.new(-0.3, -0.53, -0.6) * CFrame.Angles(math.rad(160), math.rad(127), math.rad(90)), Time = 0.1},
+			{CFrame = CFrame.new(-0.3, -0.53, -0.6) * CFrame.Angles(math.rad(160), math.rad(127), math.rad(90)), Time = 0.6},
+            {CFrame = CFrame.new(-0.3, -0.53, -0.6) * CFrame.Angles(math.rad(160), math.rad(127), math.rad(90)), Time = 0.6},
+            {CFrame = CFrame.new(-0.27, -0.8, -1.2) * CFrame.Angles(math.rad(160), math.rad(90), math.rad(90)), Time = 0.8},
+            {CFrame = CFrame.new(-0.27, -0.8, -1.2) * CFrame.Angles(math.rad(160), math.rad(80), math.rad(90)), Time = 1.2},
+            {CFrame = CFrame.new(-0.01, -0.65, -0.8) * CFrame.Angles(math.rad(160), math.rad(111), math.rad(90)), Time = 0.6},
+            {CFrame = CFrame.new(-0.01, -0.65, -0.8) * CFrame.Angles(math.rad(160), math.rad(111), math.rad(90)), Time = 0.6}
+		},
+		['Template'] = {
+		    {CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.01},
+            {CFrame = CFrame.new(-1.71, -1.11, -0.94) * CFrame.Angles(math.rad(-105), math.rad(85), math.rad(7)), Time = 0.19}
+		},
+		['Hamsterware'] = {
+		    {CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(40), math.rad(-90)), Time = 0.1},
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(70), math.rad(-135)), Time = 0.1}
+		},
+		['CatV5'] = {
+		    {CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(25), math.rad(-60)), Time = 0.1},
+			{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-40), math.rad(40), math.rad(-90)), Time = 0.1},
+			{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(55), math.rad(-115)), Time = 0.1},
+			{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-50), math.rad(70), math.rad(-60)), Time = 0.1},
+            {CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(70), math.rad(-70)), Time = 0.1}
+		},
+		['Astral2'] = {
+		    {CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.1},
+			{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.15},
+			{CFrame = CFrame.new(0.95, -1.06, -2.25) * CFrame.Angles(math.rad(-179), math.rad(61), math.rad(80)), Time = 0.15}
+		},
+		['Leaked'] = {
+		    {CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0},
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(16), math.rad(59), math.rad(-90)), Time = 0.15}
+		},
+		['Slide3'] = {
+		    {CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0},
+			{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-171), math.rad(47), math.rad(74)), Time = 0.16}
+		},
+		['Femboy'] = {
+		    {CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(1), math.rad(-7), math.rad(7)), Time = 0},
+			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-0), math.rad(0), math.rad(-0)), Time = 0.08},
+			{CFrame = CFrame.new(-0.01, 0, 0) * CFrame.Angles(math.rad(-7), math.rad(-7), math.rad(-1)), Time = 0.08},
+			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(1), math.rad(-7), math.rad(7)), Time = 0.11}
+		},
+		['MontCostume'] = {
+		    {CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.1},
+			{CFrame = CFrame.new(0.7, -0.71, 0.58) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.17},
+            {CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.05},
+            {CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.05}
+		},
+		['fdp slow'] = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.90},
+			{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.50}
+		},
+		['swong'] = {
+			{CFrame = CFrame.new(0, 0, -0.6) * CFrame.Angles(math.rad(-60), math.rad(50), math.rad(-70)), Time = 0.1, RealDelay = 0.1},
+			{CFrame = CFrame.new(0, -0.3, -0.6) * CFrame.Angles(math.rad(-160), math.rad(60), math.rad(10)), Time = 0.2, RealDelay = 0.2}
+		},
+		['Blochit'] = {
+			{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-70)), Time = 0.15, RealDelay = 0.15},
+			{CFrame = CFrame.new(0.5, -0.7, -0.2) * CFrame.Angles(math.rad(-120), math.rad(60), math.rad(-50)), Time = 0.15, RealDelay = 0.15}
+		},
+		['Future2'] = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.90},
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.90},
+		},
+		['rise'] = {
+			{CFrame = CFrame.new(0.9, 0, 0) * CFrame.Angles(math.rad(-80), math.rad(60), math.rad(-40)), Time = 0.14, RealDelay = 0.14},
+			{CFrame = CFrame.new(0.5, -0.2, -0.7) * CFrame.Angles(math.rad(-150), math.rad(55), math.rad(20)), Time = 0.14, RealDelay = 0.14}			
+		},
+		['mine (rel)'] = {
+			{CFrame = CFrame.new(0.8, -0.7, 0.6) * CFrame.Angles(math.rad(-40), math.rad(65), math.rad(-90)), Time = 0.15},
+			{CFrame = CFrame.new(0.8, -0.92, 0.9) * CFrame.Angles(math.rad(-40), math.rad(65), math.rad(-90)), Time = 0.3},
+			{CFrame = CFrame.new(0.8, -0.7, 0.6) * CFrame.Angles(math.rad(-40), math.rad(65), math.rad(-90)), Time = 0.15}
+			
+		},
+		['jab'] = {
+			{CFrame = CFrame.new(0.8, -0.7, 0.6) * CFrame.Angles(math.rad(-40), math.rad(65), math.rad(-90)), Time = 0.15},
+			{CFrame = CFrame.new(0.6, -0.6, 0.5) * CFrame.Angles(math.rad(-45), math.rad(50), math.rad(-105)), Time = 0.1},					
+		},
+		['VAPE OLD'] = {
+			{CFrame = CFrame.new(0.69, -0.77, 1.47) * CFrame.Angles(math.rad(-33), math.rad(57), math.rad(-81)), Time = 0.07, Size = 2},
+			{CFrame = CFrame.new(0.69, -0.77, 1.47) * CFrame.Angles(math.rad(-33), math.rad(90), math.rad(-81)), Time = 0.06, Size = 5},
+		},
+		['meelkware'] = {
+			{CFrame = CFrame.new(0.69, -0.77, 1.47) * CFrame.Angles(math.rad(-33), math.rad(57), math.rad(-81)), Time = 0.02, Size = 2},
+			{CFrame = CFrame.new(0.69, -0.77 + 2, 1.47) * CFrame.Angles(math.rad(-33), math.rad(57), math.rad(-81)), Time = 0.02, Size = 2},
+			{CFrame = CFrame.new(0.69, -0.77, 1.47) * CFrame.Angles(math.rad(-33), math.rad(57), math.rad(-81)), Time = 0.02, Size = 2},
+		},
+		['pistonware blue'] = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(40), math.rad(55), math.rad(290)), Time = 0.15},
+			{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(40), math.rad(70), math.rad(1)), Time = 0.15}
+		},
+		['idk'] = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(60), math.rad(304)), Time = 0.15},
+			{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(90), math.rad(304)), Time = 0.15}
+		},
+		YourMom = {
+			{CFrame = CFrame.new(0.67, -0.68, 0.62) * CFrame.Angles(math.rad(-40), math.rad(65), math.rad(-80)), Time = 0.12},
+			{CFrame = CFrame.new(0.72, -0.72, 0.6) * CFrame.Angles(math.rad(-94), math.rad(70), math.rad(-28)), Time = 0.26}
+		},
+		ZeroPrime = {
+			{CFrame = CFrame.new(0.7, -0.89, 0.6) * CFrame.Angles(math.rad(-45), math.rad(47), math.rad(-77)), Time = 0.14},
+			{CFrame = CFrame.new(0.67, -0.66, 0.59) * CFrame.Angles(math.rad(-76), math.rad(50), math.rad(-37)), Time = 0.26}
+		},
+		DortVersion2 = {
+			{CFrame = CFrame.new(0.72, -0.67, 0.68) * CFrame.Angles(math.rad(-35), math.rad(45), math.rad(-84)), Time = 0.12},
+			{CFrame = CFrame.new(0.68, -0.74, 0.53) * CFrame.Angles(math.rad(-80), math.rad(50), math.rad(-35)), Time = 0.24}
+		},
+		SlowSwordThrowAnim = {
+			{CFrame = CFrame.new(-3, -3, -3) * CFrame.Angles(math.rad(180), math.rad(90), math.rad(270)), Time = 0.1},
+			{CFrame = CFrame.new(3, 3, 3) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(180)), Time = 0.1},
+		   
+		},
+		SwordThrowAnim = {
+			{CFrame = CFrame.new(-3, -3, -3) * CFrame.Angles(math.rad(180), math.rad(90), math.rad(270)), Time = 0.3},
+			{CFrame = CFrame.new(3, 3, 3) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(180)), Time = 0.3},
+		},
+		  
+		FastSwordThrowAnim = {
+			{CFrame = CFrame.new(-3, -3, -3) * CFrame.Angles(math.rad(180), math.rad(90), math.rad(270)), Time = 0.5},
+			{CFrame = CFrame.new(3, 3, 3) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(180)), Time = 0.5},
+		},
+		SlowAndFast = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.8},
+			{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.01}
+		},
+		SkidWare = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(65), math.rad(-79)), Time = 0.1},
+			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-98), math.rad(35), math.rad(-56)), Time = 0.2}
+		},
+		Monsoon = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-45), math.rad(70), math.rad(-90)), Time = 0.07},
+			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-89), math.rad(70), math.rad(-38)), Time = 0.13}
+		},
+		N1san1StopFuckingAnnoyingMe = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-89), math.rad(68), math.rad(-56)), Time = 0.12},
+			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-65), math.rad(68), math.rad(-35)), Time = 0.19}
+		},
+		Spooky = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(54), math.rad(-56)), Time = 0.08},
+			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-98), math.rad(38), math.rad(-23)), Time = 0.15}
+		},
+		['SkidWare New'] = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(98), math.rad(-354)), Time = 0.1},
+			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-98), math.rad(65), math.rad(-68)), Time = 0.2}
+		},
+		['Kys'] = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(50), math.rad(50), math.rad(100)), Time = 0.3},
+			{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(84), math.rad(50), math.rad(50)), Time = 0.3}
+		},
+		['Astral'] = {
+			{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0},
+			{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.900},
+			{CFrame = CFrame.new(0.95, -1.06, -2.25) * CFrame.Angles(math.rad(-179), math.rad(61), math.rad(80)), Time = 0.15}
+		},
+		xarq0n1 = {
+			{CFrame = CFrame.new(0, -3, 0) * CFrame.Angles(-math.rad(120), math.rad(530), -math.rad(220)), Time = 0.2},
+			{CFrame = CFrame.new(0.9, 0, 1.5) * CFrame.Angles(math.rad(7), math.rad(30), math.rad(820)), Time = 0.2}
+		},
+		xarq0n2 = {
+			{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(190)), Time = 0.8},
+			{CFrame = CFrame.new(-1, 1, -2.2) * CFrame.Angles(math.rad(200), math.rad(40), math.rad(1)), Time = 0.8}
+		},
+		xarq0n3 = {
+			{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(195), math.rad(95), math.rad(130)), Time = 0.1},
+			{CFrame = CFrame.new(-1, 1, -2.2) * CFrame.Angles(math.rad(300), math.rad(40), math.rad(1)), Time = 0.2}
+		},
+		Swiss = {
+			{CFrame = CFrame.new(1, -1.4, 1.4) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.15},
+			{CFrame = CFrame.new(-1.4, 1, -1) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.15}
+		},
+		SlowSwiss = {
+			{CFrame = CFrame.new(1, -1.4, 1.4) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.25},
+			{CFrame = CFrame.new(-1.4, 1, -1) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.25}
+		},
+		OldAstralAnim = {
+			{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.1},
+			{CFrame = CFrame.new(-1, 1, -2.2) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.1}
+		},
+		SlowOldAstralAnim = {
+			{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.4},
+			{CFrame = CFrame.new(-1, 1, -2.2) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.4}
+		},
+		ZylaAnim = {
+			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(-math.rad(190), math.rad(110), -math.rad(90)), Time = 0.3},
+			{CFrame = CFrame.new(0.3, -2, 2) * CFrame.Angles(math.rad(120), math.rad(140), math.rad(320)), Time = 0.3}
+		},
+		SliceAnim = {
+			{CFrame = CFrame.new(3, -4, 3) * CFrame.Angles(math.rad(90), math.rad(90), math.rad(90)), Time = 0.2},
+			{CFrame = CFrame.new(-4, 3, -4) * CFrame.Angles(math.rad(111), math.rad(222), math.rad(333)), Time = 0.2}
+		},
+		SlowSliceAnim = {
+			{CFrame = CFrame.new(3, -4, 3) * CFrame.Angles(math.rad(90), math.rad(90), math.rad(90)), Time = 0.4},
+			{CFrame = CFrame.new(-4, 3, -4) * CFrame.Angles(math.rad(111), math.rad(222), math.rad(333)), Time = 0.4}
+		},
+		PistonWareBlock = {
+			{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.00001} 
+	},
+	--[[['Normal'] = {
+        {CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.05},
+        {CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.05}
+    },
+    ['Smooth'] = {
+        {CFrame = CFrame.new(1, 0, 0.5) * CFrame.Angles(math.rad(-90), math.rad(60), math.rad(-60)), Time = 0.2},
+        {CFrame = CFrame.new(1, -0.2, -0.5) * CFrame.Angles(math.rad(-160), math.rad(60), math.rad(-30)), Time = 0.12}
+    },
+    ['Slow'] = {
+        {CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.15},
+        {CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.15}
+    },]]
+    ['1.8'] = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Time = 0.12},
+		{CFrame = CFrame.new(0.16, -1.16, 1) * CFrame.Angles(math.rad(-179), math.rad(54), math.rad(33)), Time = 0.12}
+	},
+    ['Blocking'] = {
+        {CFrame = CFrame.new(-0.01, -3.51, -2.01) * CFrame.Angles(math.rad(-180), math.rad(85), math.rad(-180)), Time = 0}
+    },
+    ['Swag2'] = {
+        {CFrame = CFrame.new(-0.3, -0.53, -0.6) * CFrame.Angles(math.rad(160), math.rad(127), math.rad(90)), Time = 0.1},
+        {CFrame = CFrame.new(-0.3, -0.53, -0.6) * CFrame.Angles(math.rad(160), math.rad(127), math.rad(90)), Time = 0.13},
+        {CFrame = CFrame.new(-0.27, -0.8, -1.2) * CFrame.Angles(math.rad(160), math.rad(90), math.rad(90)), Time = 0.13},
+        {CFrame = CFrame.new(-0.01, -0.65, -0.8) * CFrame.Angles(math.rad(160), math.rad(111), math.rad(90)), Time = 0.13},
+    },
+	['Kawaii'] = {
+		{CFrame = CFrame.new(-0.01, 0.49, -1.51) * CFrame.Angles(math.rad(90), math.rad(45), math.rad(-90)),Time = 0},
+		{CFrame = CFrame.new(-0.01, 0.49, -1.51) * CFrame.Angles(math.rad(-51), math.rad(48), math.rad(24)),Time = 0.06},
+		{CFrame = CFrame.new(-0.01, 0.49, -1.51) * CFrame.Angles(math.rad(90), math.rad(45), math.rad(-90)),Time = 0.06}
+	},
+	['Swank'] = {
+		{CFrame = CFrame.new(-0.01, -.45, -0.7) * CFrame.Angles(math.rad(-0), math.rad(85), math.rad(0)),Time = 0.1},
+        {CFrame = CFrame.new(-0.02, -.45, -0.7) * CFrame.Angles(math.rad(59), math.rad(19), math.rad(-37)),Time = 0.09},
+	},
+    ['Swank2'] = {
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.09},
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.09},
+		{CFrame = CFrame.new(0.95, -1.06, -2.25) * CFrame.Angles(math.rad(-179), math.rad(61), math.rad(80)), Time = 0.15}
+    },
+    ['TenacityOld2'] = {
+		{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(25), math.rad(-60)), Time = 0.1},
+		{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-40), math.rad(40), math.rad(-90)), Time = 0.1},
+		{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(55), math.rad(-115)), Time = 0.1},
+		{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-50), math.rad(70), math.rad(-60)), Time = 0.1},
+		{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(70), math.rad(-70)), Time = 0.1}
+	},
+    ['OldSwank3'] = {
+		{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.4},
+		{CFrame = CFrame.new(-1, 1, -2.2) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.4}
+	},
+    ['TenacityOld'] = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(-math.rad(190), math.rad(110), -math.rad(90)), Time = 0.3},
+		{CFrame = CFrame.new(0.3, -2, 2) * CFrame.Angles(math.rad(120), math.rad(140), math.rad(320)), Time = 0.3}
+	},
+    ['AstolfoNew'] = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(-math.rad(190), math.rad(110), -math.rad(90)), Time = 0.3},
+	},
+	['Sigma2'] = {
+        {CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.05},
+        {CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.05}
+    },
+    ['Sigma3'] = {
+        {CFrame = CFrame.new(0.3, -0.8, -1.3) * CFrame.Angles(math.rad(160), math.rad(84), math.rad(90)), Time = 0.18},
+        {CFrame = CFrame.new(0.3, -0.9, -1.17) * CFrame.Angles(math.rad(160), math.rad(70), math.rad(90)), Time = 0.18},
+        {CFrame = CFrame.new(0.4, -0.65, -0.8) * CFrame.Angles(math.rad(160), math.rad(111), math.rad(90)), Time = 0.18}
+    },
+    ['Tap'] = {
+        {CFrame = CFrame.new(5, -1, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(10)), Time = 0.25},
+        {CFrame = CFrame.new(5, -1, -0.3) * CFrame.Angles(math.rad(-100), math.rad(-30), math.rad(10)), Time = 0.25}
+    },
+    ['Swag'] = {
+        {CFrame = CFrame.new(-0.01, -0.01, -1.01) * CFrame.Angles(math.rad(-90), math.rad(90), math.rad(0)), Time = 0.08},
+        {CFrame = CFrame.new(-0.01, -0.01, -1.01) * CFrame.Angles(math.rad(10), math.rad(70), math.rad(-90)), Time = 0.08},
+    },
+    ['Suicide'] = {
+        {CFrame = CFrame.new(-2.5, -4.5, -0.02) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(-0)), Time = 0.1},
+        {CFrame = CFrame.new(-2.5, -1, -0.02) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(-0)), Time = 0.05}
+    },
+    ['Goofy2'] = {
+        {CFrame = CFrame.new(0.5, -0.01, -1.91) * CFrame.Angles(math.rad(-51), math.rad(9), math.rad(56)), Time = 0.10},
+        {CFrame = CFrame.new(0.5, -0.51, -1.91) * CFrame.Angles(math.rad(-51), math.rad(9), math.rad(56)), Time = 0.08},
+        {CFrame = CFrame.new(0.5, -0.01, -1.91) * CFrame.Angles(math.rad(-51), math.rad(9), math.rad(56)), Time = 0.08}
+    },
+    ['Rise2'] = {
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0},
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.900},
+		{CFrame = CFrame.new(0.95, -1.06, -2.25) * CFrame.Angles(math.rad(-179), math.rad(61), math.rad(80)), Time = 0.15}
+	},
+    ['Rise4'] = {
+        {CFrame = CFrame.new(0.9,0,0) * CFrame.Angles(math.rad(-80), math.rad(60), math.rad(-40)), Time = 0.14},
+        {CFrame = CFrame.new(0.5,-0.2,-0.7) * CFrame.Angles(math.rad(-150), math.rad(55), math.rad(20)), Time = 0.14}
+    },
+    ['Rise3'] = {
+        {CFrame = CFrame.new(0.6, -1, 0) * CFrame.Angles(-math.rad(190), math.rad(110), -math.rad(90)), Time = 0.3},
+        {CFrame = CFrame.new(0.6, -1.5, 2) * CFrame.Angles(math.rad(120), math.rad(140), math.rad(320)), Time = 0.1}    
+    },
+    ['Rise4'] = {
+        {CFrame = CFrame.new(0.3, -2, 0.5) * CFrame.Angles(-math.rad(190), math.rad(110), -math.rad(90)), Time = 0.3},
+        {CFrame = CFrame.new(0.3, -1.5, 1.5) * CFrame.Angles(math.rad(120), math.rad(140), math.rad(320)), Time = 0.1}
+    },
+    ['Swong2'] = {
+        {CFrame = CFrame.new(0,0,-.6) * CFrame.Angles(math.rad(-60), math.rad(50), math.rad(-70)), Time = 0.1},
+        {CFrame = CFrame.new(0,-.3, -.6) * CFrame.Angles(math.rad(-160), math.rad(60), math.rad(10)), Time = 0.2},
+    },
+    ['Eternal'] = {
+        {CFrame = CFrame.new(0,0,-1) * CFrame.Angles(math.rad(-40), math.rad(60), math.rad(-80)), Time = 0.17},
+        {CFrame = CFrame.new(0,0,-1) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-80)), Time = 0.17}
+    },
+    ['monkey'] = {
+		{CFrame = CFrame.new(0, -3, 0) * CFrame.Angles(-math.rad(120), math.rad(530), -math.rad(220)), Time = 0.2},
+		{CFrame = CFrame.new(0.9, 0, 1.5) * CFrame.Angles(math.rad(7), math.rad(30), math.rad(820)), Time = 0.2}
+	},
+    ['Throw'] = {
+		{CFrame = CFrame.new(-3, -3, -3) * CFrame.Angles(math.rad(255), math.rad(122), math.rad(321)), Time = 0.5},
+		{CFrame = CFrame.new(1, 1, 1) * CFrame.Angles(math.rad(156), math.rad(54), math.rad(91)), Time = 0.5}
+	},
+    ['Slide2'] = {
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0},
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-171), math.rad(47), math.rad(74)), Time = 0.16}
+	},
+    ['Ketamine2'] = {
+        {CFrame = CFrame.new(5, -3, 2) * CFrame.Angles(math.rad(120), math.rad(160), math.rad(140)), Time = 0.07},
+        {CFrame = CFrame.new(5, -2.5, -1) * CFrame.Angles(math.rad(80), math.rad(180), math.rad(180)), Time = 0.07},
+        {CFrame = CFrame.new(5, -3.4, -3.3) * CFrame.Angles(math.rad(45), math.rad(160), math.rad(190)), Time = 0.07},
+        {CFrame = CFrame.new(5, -2.5, -1) * CFrame.Angles(math.rad(80), math.rad(180), math.rad(180)), Time = 0.07},
+    },
+    ['Astolfo2'] = {
+		{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(25), math.rad(-60)), Time = 0.1},
+		{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-40), math.rad(40), math.rad(-90)), Time = 0.1},
+		{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(55), math.rad(-115)), Time = 0.1},
+		{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-50), math.rad(70), math.rad(-60)), Time = 0.1},
+		{CFrame = CFrame.new(0.63, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(70), math.rad(-70)), Time = 0.1}
+	},
+    ['Ketamine'] = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(1), math.rad(-7), math.rad(7)), Time = 0},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-0), math.rad(0), math.rad(-0)), Time = 0.08},
+	    {CFrame = CFrame.new(-0.01, 0, 0) * CFrame.Angles(math.rad(-7), math.rad(-7), math.rad(-1)), Time = 0.08},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(1), math.rad(-7), math.rad(7)), Time = 0.11}
+	},
+    ['Swiss2'] = {
+		{CFrame = CFrame.new(1, -1.4, 1.4) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.25},
+		{CFrame = CFrame.new(-1.4, 1, -1) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.25}
+	},
+    ['Old'] = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(-math.rad(190), math.rad(110), -math.rad(90)), Time = 0.3},
+		{CFrame = CFrame.new(0.3, -2, 2) * CFrame.Angles(math.rad(120), math.rad(140), math.rad(320)), Time = 0.3}
+	},
+    ['Extension'] = {
+        {CFrame = CFrame.new(3, 0, 1) * CFrame.Angles(math.rad(-60), math.rad(30), math.rad(-40)), Time = 0.2},
+        {CFrame = CFrame.new(3.3, -.2, 0.7) * CFrame.Angles(math.rad(-70), math.rad(10), math.rad(-20)), Time = 0.2},
+        {CFrame = CFrame.new(3.8, -.2, 1.3) * CFrame.Angles(math.rad(-80), math.rad(0), math.rad(-20)), Time = 0.1},
+        {CFrame = CFrame.new(3, .3, 1.3) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(-20)), Time = 0.07},
+        {CFrame = CFrame.new(3, .3, .8) * CFrame.Angles(math.rad(-90), math.rad(10), math.rad(-40)), Time = 0.07},
+    },
+    ['Astolfo'] = {
+        {CFrame = CFrame.new(5, -1, -1) * CFrame.Angles(math.rad(-40), math.rad(0), math.rad(0)), Time = 0.05},
+        {CFrame = CFrame.new(5, -0.7, -1) * CFrame.Angles(math.rad(-120), math.rad(20), math.rad(-10)), Time = 0.05},
+    },
+    German = {
+        {CFrame = CFrame.new(0.5, -0.01, -1.91) * CFrame.Angles(math.rad(-51), math.rad(9), math.rad(56)), Time = 0.10},
+        {CFrame = CFrame.new(0.5, -0.51, -1.91) * CFrame.Angles(math.rad(-51), math.rad(9), math.rad(56)), Time = 0.08},
+        {CFrame = CFrame.new(0.5, -0.01, -1.91) * CFrame.Angles(math.rad(-51), math.rad(9), math.rad(56)), Time = 0.08}
+    },
+    Penis = {
+        {CFrame = CFrame.new(-1.8, 0.5, -1.01) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(-90)), Time = 0.05},
+        {CFrame = CFrame.new(-1.8, -0.21, -1.01) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(-90)), Time = 0.05}
+    },
+    KillMyself = {
+        {CFrame = CFrame.new(-2.5, -4.5, -0.02) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(-0)), Time = 0.1},
+        {CFrame = CFrame.new(-2.5, -1, -0.02) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(-0)), Time = 0.05}
+    },
+	--scrxpted needs to do this ^^
+	['SmootherExhibition'] = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.6},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.3},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.7},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.9},
+		{CFrame = CFrame.new(0.63, -0.1, 1.37) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 1}
+	},
+	['PurpulV1'] = {
+		 {CFrame = CFrame.new(0.33, -0.45, 0.3) * CFrame.Angles(math.rad(-23), math.rad(50), math.rad(-90)), Time = 0.1},
+		 {CFrame = CFrame.new(0.33, -0.7, 0.6) * CFrame.Angles(math.rad(-25), math.rad(50), math.rad(-90)), Time = 0.1}
+	},
+	SuperSlowSlow = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.50},
+		{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.50}
+	},
+	--new anims thanks to inum or activisisnice on discord :pray:
+	NewCatV5 = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-70)), Time = 0.1},
+		{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(-160), math.rad(60), math.rad(1)), Time = 0.1},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-0), math.rad(0), math.rad(-0)), Time = -0.2},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-22), math.rad(56), math.rad(-106)), Time = 0.1}
+	},
+	blackwareFast = {
+		{CFrame = CFrame.new(1.49, -1, 0.12) * CFrame.Angles(math.rad(260), math.rad(55), math.rad(200)), Time = 0.30},
+		{CFrame = CFrame.new(0.37, -2, -0.4) * CFrame.Angles(math.rad(-40), math.rad(60), math.rad(-20)), Time = 0.30}
+	},
+	blackwareSlow = {
+		{CFrame = CFrame.new(1.5, -0.80, 0.14) * CFrame.Angles(math.rad(260), math.rad(50), math.rad(240)), Time = 0.40},
+		{CFrame = CFrame.new(0.5, -0.15, -0.6) * CFrame.Angles(math.rad(-40), math.rad(55), math.rad(-50)), Time = 0.40}
+	},
+	blackMeteor = {
+		{CFrame = CFrame.new(0.80, -0.77, 0.9) * CFrame.Angles(math.rad(-30), math.rad(55), math.rad(-90)), Time = 0.20},
+		{CFrame = CFrame.new(0.32, -0.81, 0.10) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.20}
+	},
+	Blackware = {
+		{CFrame = CFrame.new(0.6, -0.7, 0.6) * CFrame.Angles(math.rad(-8), math.rad(40), math.rad(-60)), Time = 0.1},
+		{CFrame = CFrame.new(0.49, -0.8, 0.3) * CFrame.Angles(math.rad(8), math.rad(40), math.rad(-10)), Time = 0.15}
+	},
+	['icespice'] = {
+		{CFrame = CFrame.new(1, -1, 2) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(190)), Time = 0.8},
+		{CFrame = CFrame.new(-1, 1, -2.2) * CFrame.Angles(math.rad(200), math.rad(40), math.rad(1)), Time = 0.8}
+	},
+	['KEK'] = {
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.2},
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.2},
+		{CFrame = CFrame.new(0.95, -1.06, -2.25) * CFrame.Angles(math.rad(-179), math.rad(61), math.rad(80)), Time = 0.1}
+	},
+	['normalv2'] = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.09},
+		{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.09}
+	},
+	['sillydick'] = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(-math.rad(190), math.rad(110), -math.rad(90)), Time = 0.3},
+		{CFrame = CFrame.new(0.3, -2, 2) * CFrame.Angles(math.rad(120), math.rad(140), math.rad(320)), Time = 0.3}
+	},
+	['normalv3'] = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.06},
+		{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.05}
+	},
+	--https://cdn.discordapp.com/attachments/1180128067239292949/1182778437790879824/IMG_0129.png?ex=6585ef42&is=65737a42&hm=66a4a46d8e748b3b0a1c1e2e36e1142d70bc0a7f83d1752a7b69e7f87b665793&
+	['PRISMASTADAWN'] = {
+		{CFrame = CFrame.new(0.3, -2, .1) * CFrame.Angles(math.rad(190), math.rad(75), math.rad(90)), Time = 0.13},
+		{CFrame = CFrame.new(0.3, -2, .2) * CFrame.Angles(math.rad(190), math.rad(95), math.rad(80)), Time = 0.13},
+		{CFrame = CFrame.new(0.3, -2, .1) * CFrame.Angles(math.rad(120), math.rad(170), math.rad(90)), Time = 0.13},
+	},
+	['Custom+'] = {
+		{CFrame = CFrame.new(0.39, 1, 0.2) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.13},
+		{CFrame = CFrame.new(0.39, 1, 0.2) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.03},
+		{CFrame = CFrame.new(0.7, 0.1, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.09},
+		{CFrame = CFrame.new(0.7, 0.1, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.05},
+		{CFrame = CFrame.new(0.39, 0.1, 1.37) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.13}
+	},
+	['FastslowBETTER'] = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.8},
+		{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.01}
+	},	
+	['cum'] = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-45), math.rad(70), math.rad(-90)), Time = 0.07},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-89), math.rad(70), math.rad(-38)), Time = 0.13}
+	},
+	['meteor4'] = {
+		{CFrame = CFrame.new(0.2, -0.7, 0) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.2},
+		{CFrame = CFrame.new(0.2, -1, 0) * CFrame.Angles(math.rad(23), math.rad(67), math.rad(-111)), Time = 0.35}
+	},
+	['meteor'] = {
+		{CFrame = CFrame.new(0, 0, -1) * CFrame.Angles(math.rad(-40), math.rad(60), math.rad(-80)), Time = 0.17},
+		{CFrame = CFrame.new(0, 0, -1) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-80)), Time = 0.17}
+	},
+	['meteor6'] = {
+		{CFrame = CFrame.new(-0.4, -0.7, -1.3) * CFrame.Angles(math.rad(111), math.rad(111), math.rad(130)), Time = 0.23},
+		{CFrame = CFrame.new(-0.8, -0.9, -1.7) * CFrame.Angles(math.rad(20), math.rad(130), math.rad(180)), Time = 0.23},
+		{CFrame = CFrame.new(-0.4, -0.7, -1.3) * CFrame.Angles(math.rad(111), math.rad(111), math.rad(130)), Time = 0.23},
+	},
+	['astrolfo'] = {
+		{CFrame = CFrame.new(-0.4, -0.7, -1.3) * CFrame.Angles(math.rad(111), math.rad(111), math.rad(130)), Time = 0.23},
+		{CFrame = CFrame.new(-0.8, -0.9, -1.7) * CFrame.Angles(math.rad(20), math.rad(130), math.rad(180)), Time = 0.23},
+		{CFrame = CFrame.new(-0.4, -0.7, -1.3) * CFrame.Angles(math.rad(111), math.rad(111), math.rad(130)), Time = 0.23},
+		{CFrame = CFrame.new(-0.8, -0.9, -1.7) * CFrame.Angles(math.rad(20), math.rad(130), math.rad(180)), Time = 0.23},
+		{CFrame = CFrame.new(-0.8, -0.6, -1) * CFrame.Angles(math.rad(20), math.rad(130), math.rad(180)), Time = 0.19},
+	},
+	['idkthesenames'] = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-89), math.rad(68), math.rad(-56)), Time = 0.12},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-65), math.rad(68), math.rad(-35)), Time = 0.19}
+	},
+	['sexy'] = {
+		{CFrame = CFrame.new(0.3, -2, 0.5) * CFrame.Angles(math.rad(190), math.rad(110), math.rad(90)), Time = 0.3},
+		{CFrame = CFrame.new(0.3, -1.5, 1.5) * CFrame.Angles(math.rad(120), math.rad(140), math.rad(320)), Time = 0.1}
+	},
+	['meteor2'] = {
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-70)), Time = 0.15},
+		{CFrame = CFrame.new(0.5, -0.7, -0.2) * CFrame.Angles(math.rad(-120), math.rad(60), math.rad(-50)), Time = 0.15}
+	},
+	['meteor7'] = {
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-70)), Time = 0.15},
+		{CFrame = CFrame.new(0.5, -0.7, -0.2) * CFrame.Angles(math.rad(-120), math.rad(60), math.rad(10)), Time = 0.14},
+	},
+	['meteor8'] = {
+		{CFrame = CFrame.new(0.9, 0, 0) * CFrame.Angles(math.rad(-80), math.rad(60), math.rad(-40)), Time = 0.14},
+		{CFrame = CFrame.new(0.5, -0.2, -0.7) * CFrame.Angles(math.rad(-150), math.rad(55), math.rad(20)), Time = 0.14},
+	},
+	['sexyfr'] = {
+		{CFrame = CFrame.new(0.3, -2, 0.5) * CFrame.Angles(-math.rad(190), math.rad(110), -math.rad(90)), Time = 0.3},
+		{CFrame = CFrame.new(0.3, -1.5, 1.5) * CFrame.Angles(math.rad(120), math.rad(140), math.rad(320)), Time = 0.1}
+	},
+	['2cum'] = {
+		{CFrame = CFrame.new(0.7, -0.4, 0.612) * CFrame.Angles(math.rad(285), math.rad(65), math.rad(293)), Time = 0.13},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(210), math.rad(70), math.rad(3)), Time = 0.13}
+	},
+	['fatbitch'] = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(350), math.rad(45), math.rad(85)), Time = 0.12},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(350), math.rad(80), math.rad(60)), Time = 0.12},
+	},
+	['meteor3'] = {
+		{CFrame = CFrame.new(-0.3, -0.53, -0.6) * CFrame.Angles(math.rad(160), math.rad(127), math.rad(90)), Time = 0.13},
+		{CFrame = CFrame.new(-0.27, -0.8, -1.2) * CFrame.Angles(math.rad(160), math.rad(90), math.rad(90)), Time = 0.13},
+		{CFrame = CFrame.new(-0.01, -0.65, -0.8) * CFrame.Angles(math.rad(160), math.rad(111), math.rad(90)), Time = 0.13},
+	},
+	['random'] = {
+		{CFrame = CFrame.new(-0.06, -0.5, -1.03) * CFrame.Angles(math.rad(-39), math.rad(97), math.rad(-92)), Time = 0.2},
+		{CFrame = CFrame.new(-0.05, -0.5, -1.03) * CFrame.Angles(math.rad(-39), math.rad(75), math.rad(-93)), Time = 0.3},
+		{CFrame = CFrame.new(-0.03, -0.5, 0.4) * CFrame.Angles(math.rad(-39), math.rad(75), math.rad(-91)), Time = 0.2}
+	},
+	SlowAsstral = {
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.1},
+		{CFrame = CFrame.new(0.7, -0.7, 0.6) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.14},
+		{CFrame = CFrame.new(0.95, -1.06, -2.25) * CFrame.Angles(math.rad(-179), math.rad(61), math.rad(80)), Time = 0.26}
+	},
+	Karambit = {
+		{CFrame = CFrame.new(-0.01, 0, -1.51) * CFrame.Angles(math.rad(-50), math.rad(0), math.rad(0)), Time = 0},
+		{CFrame = CFrame.new(-0.01, -0.01, -1.51) * CFrame.Angles(math.rad(-155), math.rad(0), math.rad(-0)), Time = 0.03},
+		{CFrame = CFrame.new(-0.01, -0.01, -1.51) * CFrame.Angles(math.rad(120), math.rad(0), math.rad(0)), Time = 0.03},
+		{CFrame = CFrame.new(-0.01, -0.01, -1.51) * CFrame.Angles(math.rad(30), math.rad(-0), math.rad(0)), Time = 0.03},
+		{CFrame = CFrame.new(-0.01, 0, -1.51) * CFrame.Angles(math.rad(-50), math.rad(0), math.rad(0)), Time = 0.15}
+	},
+	LiquidBounceV2 = {
+		{CFrame = CFrame.new(0, 0, -1) * CFrame.Angles(math.rad(-40), math.rad(60), math.rad(-80)), Time = 0.17},
+		{CFrame = CFrame.new(0, 0, -1) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-80)), Time = 0.23}
+	},
+	Tenacity = {
+		{CFrame = CFrame.new(0.9, 0, 0) * CFrame.Angles(math.rad(-80), math.rad(60), math.rad(-40)), Time = 0.2},
+		{CFrame = CFrame.new(0.5, -0.2, -0.7) * CFrame.Angles(math.rad(-150), math.rad(55), math.rad(20)), Time = 0.2}
+	},
+	StabRemake = {
+		{CFrame = CFrame.new(2, -2.5, 0.2) * CFrame.Angles(math.rad(268), math.rad(54), math.rad(327)), Time = 0.17},
+		{CFrame = CFrame.new(1.6, -2.5, 0.2) * CFrame.Angles(math.rad(189), math.rad(52), math.rad(347)), Time = 0.16}
+	},
+	SlashRemake = {
+		{CFrame = CFrame.new(3.0, -1.7, -1.1) * CFrame.Angles(math.rad(307), math.rad(57), math.rad(145)), Time = 0.18},
+		{CFrame = CFrame.new(3.0, -1.7, -1.3) * CFrame.Angles(math.rad(203), math.rad(57), math.rad(226)), Time = 0.14}
+	},
+	ExhiRemake = {
+		{CFrame = CFrame.new(1, 0, -0.5) * CFrame.Angles(math.rad(-90), math.rad(60), math.rad(-60)), Time = 0.2},
+		{CFrame = CFrame.new(1, -0.2, -0.5) * CFrame.Angles(math.rad(-160), math.rad(60), math.rad(-30)), Time = 0.12}
+	},
+	PushRemake = {
+		{CFrame = CFrame.new(0.2, -0.7, 0) * CFrame.Angles(math.rad(-16), math.rad(60), math.rad(-80)), Time = 0.2},
+		{CFrame = CFrame.new(0.2, -1, 0) * CFrame.Angles(math.rad(23), math.rad(67), math.rad(-111)), Time = 0.35}
+	},
+	SwongRemake = {
+		{CFrame = CFrame.new(0, 0, -0.6) * CFrame.Angles(math.rad(-60), math.rad(50), math.rad(-70)), Time = 0.1},
+		{CFrame = CFrame.new(0, -0.3, -0.6) * CFrame.Angles(math.rad(-160), math.rad(60), math.rad(10)), Time = 0.2}
+	},
+	BetterDortware = {
+		{CFrame = CFrame.new(-0.3, -0.53, -0.6) * CFrame.Angles(math.rad(160), math.rad(127), math.rad(90)), Time = 0.1},
+		{CFrame = CFrame.new(-0.3, -0.53, -0.6) * CFrame.Angles(math.rad(160), math.rad(127), math.rad(90)), Time = 0.13},
+		{CFrame = CFrame.new(-0.27, -0.8, -1.2) * CFrame.Angles(math.rad(160), math.rad(127), math.rad(90)), Time = 0.03},
+		{CFrame = CFrame.new(-0.27, -0.8, -1.2) * CFrame.Angles(math.rad(160), math.rad(90), math.rad(90)), Time = 0.13},
+		{CFrame = CFrame.new(-0.01, -0.65, -0.8) * CFrame.Angles(math.rad(160), math.rad(80), math.rad(90)), Time = 0.07},
+		{CFrame = CFrame.new(0.5, -0.2, -0.8) * CFrame.Angles(math.rad(-150), math.rad(111), math.rad(20)), Time = 0.13},
+		{CFrame = CFrame.new(0.5, -0.2, -0.8) * CFrame.Angles(math.rad(-150), math.rad(111), math.rad(20)), Time = 0.03}
+	},
+	BingChilling = {
+		{CFrame = CFrame.new(0.07, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.1},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2}
+	},
+	HypixelBlock = {
+		{CFrame = CFrame.new(1, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(45), math.rad(0), math.rad(0)), Time = 0.2},
+		{CFrame = CFrame.new(1, 0, 0) * CFrame.Angles(math.rad(-60), math.rad(0), math.rad(0)), Time = 0.2},
+		{CFrame = CFrame.new(0.3, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2}
+	},
+	INUMAURA = {
+		{CFrame = CFrame.new(0, -0.1, -0.30) * CFrame.Angles(math.rad(-20), math.rad(20), math.rad(0)), Time = 0.30},
+		{CFrame = CFrame.new(0, -0.50, -0.30) * CFrame.Angles(math.rad(-40), math.rad(41), math.rad(0)), Time = 0.32},
+		{CFrame = CFrame.new(0, -0.1, -0.30) * CFrame.Angles(math.rad(-60), math.rad(0), math.rad(0)), Time = 0.32}
+	},
+	Shake = {
+		{CFrame = CFrame.new(0.69, -0.8, 0.6) * CFrame.Angles(math.rad(-60), math.rad(30), math.rad(-35)), Time = 0.05},
+		{CFrame = CFrame.new(0.8, -0.71, 0.30) * CFrame.Angles(math.rad(-60), math.rad(39), math.rad(-55)), Time = 0.02},
+		{CFrame = CFrame.new(0.8, -2, 0.45) * CFrame.Angles(math.rad(-60), math.rad(30), math.rad(-55)), Time = 0.03}
+	},
+	PopV3 = {
+		{CFrame = CFrame.new(0.69, -0.10, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.1},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.1},
+		{CFrame = CFrame.new(0.69, -2, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.1}
+	},
+	PopV4 = {
+		{CFrame = CFrame.new(0.69, -0.10, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.01},
+		{CFrame = CFrame.new(0.7, -0.30, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.01},
+		{CFrame = CFrame.new(0.69, -2, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.01}
+	},
+	Remake = {
+		{CFrame = CFrame.new(-0.10, -0.45, -0.20) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-50)), Time = 0.01},
+		{CFrame = CFrame.new(0.7, -0.71, -1) * CFrame.Angles(math.rad(-90), math.rad(50), math.rad(-38)), Time = 0.2},
+		{CFrame = CFrame.new(0.63, -0.1, 1.50) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.15}
+	},
+	PopV2 = {
+		{CFrame = CFrame.new(0.10, -0.3, -0.30) * CFrame.Angles(math.rad(295), math.rad(80), math.rad(290)), Time = 0.09},
+		{CFrame = CFrame.new(0.10, 0.10, -1) * CFrame.Angles(math.rad(295), math.rad(80), math.rad(300)), Time = 0.1},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.15},
+	},
+	Bob = {
+		{CFrame = CFrame.new(-0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2},
+		{CFrame = CFrame.new(-0.7, -2.5, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2}
+	},
+	Knife = {
+		{CFrame = CFrame.new(-0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2},
+		{CFrame = CFrame.new(1, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2},
+		{CFrame = CFrame.new(4, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2},
+	},
+	FunnyExhibition = {
+		{CFrame = CFrame.new(-1.5, -0.50, 0.20) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.10},
+		{CFrame = CFrame.new(-0.55, -0.20, 1.5) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2},
+	},
+	FasterSmooth = {
+		{CFrame = CFrame.new(-0.42, 0, 0.30) * CFrame.Angles(math.rad(0), math.rad(80), math.rad(60)), Time = 0.11},
+		{CFrame = CFrame.new(-0.42, 0, 0.30) * CFrame.Angles(math.rad(0), math.rad(100), math.rad(60)), Time = 0.11},
+		{CFrame = CFrame.new(-0.42, 0, 0.30) * CFrame.Angles(math.rad(0), math.rad(60), math.rad(60)), Time = 0.11},
+	},
+	Smooth2 = {
+		{CFrame = CFrame.new(-0.42, 0, 0.30) * CFrame.Angles(math.rad(0), math.rad(80), math.rad(60)), Time = 0.25},
+		{CFrame = CFrame.new(-0.42, 0, 0.30) * CFrame.Angles(math.rad(0), math.rad(100), math.rad(60)), Time = 0.25},
+		{CFrame = CFrame.new(-0.42, 0, 0.30) * CFrame.Angles(math.rad(0), math.rad(60), math.rad(60)), Time = 0.25},
+	},
+	Funny = {
+		{CFrame = CFrame.new(0, 0, 1.5) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)),Time = 0.15},
+		{CFrame = CFrame.new(0, 0, -1.5) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)),Time = 0.15},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.15},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-55), math.rad(0), math.rad(0)), Time = 0.15}
+	},
+	FunnyFuture = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-60), math.rad(0), math.rad(0)),Time = 0.25},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)),Time = 0.25}
+	},
+	Goofy = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.25},
+		{CFrame = CFrame.new(-1, -1, 1) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)),Time = 0.25},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(-33)),Time = 0.25}
+	},
+	Future = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.10) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.20},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)),Time = 0.25}
+	},
+	Pop = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.15},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)),Time = 0.25},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-30), math.rad(80), math.rad(-90)), Time = 0.35},
+		{CFrame = CFrame.new(0, 1, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.35}
+	},
+	FunnyV2 = {
+		{CFrame = CFrame.new(0.10, -0.5, -1) * CFrame.Angles(math.rad(295), math.rad(80), math.rad(300)), Time = 0.45},
+		{CFrame = CFrame.new(-5, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.45},
+		{CFrame = CFrame.new(5, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.45},
+	},
+	Slowest = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.1},
+		{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.15},
+		{CFrame = CFrame.new(0.69, -0.72, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.15},
+		{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.15},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.1},
+	},
+	BigAuraAnimation = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.1},
+		{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.1},
+		{CFrame = CFrame.new(0.69, -0.7, 0.1) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Time = 0.1},
+		{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(-179), math.rad(54), math.rad(33)), Time = 0.1},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.1},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2},
+		{CFrame = CFrame.new(0.39, 1, 0.2) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.13},
+		{CFrame = CFrame.new(0.7, 0.1, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.09},
+		{CFrame = CFrame.new(0.39, 0.1, 1.37) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.13},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-90), math.rad(8), math.rad(5)), Time = 0.1},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(180), math.rad(3), math.rad(13)), Time = 0.1},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(90), math.rad(-5), math.rad(8)), Time = 0.1},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(-0), math.rad(-0)), Time = 0.1},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.15},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.05},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.1},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.05},
+		{CFrame = CFrame.new(0.63, -0.1, 1.37) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.15},
+	},
+	Acronisware = {
+		{CFrame = CFrame.new(0.39, 1, 0.2) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.03},
+		{CFrame = CFrame.new(0.7, 0.1, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.05},
+		{CFrame = CFrame.new(0.39, 0.1, 1.37) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.13},
+	},
+	['CustomSP+'] = {
+		{CFrame = CFrame.new(0.39, 1, 0.2) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.13},
+		{CFrame = CFrame.new(0.39, 1, 0.2) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.03},
+		{CFrame = CFrame.new(0.7, 0.1, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.09},
+		{CFrame = CFrame.new(0.7, 0.1, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.05},
+		{CFrame = CFrame.new(0.39, 0.1, 1.37) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.13}
+	},
+	['FemboyActivis'] = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(1), math.rad(-7), math.rad(7)), Time = 0},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-0), math.rad(0), math.rad(-0)), Time = 0.08},
+		{CFrame = CFrame.new(-0.01, 0, 0) * CFrame.Angles(math.rad(-7), math.rad(-7), math.rad(-1)), Time = 0.08},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(1), math.rad(-7), math.rad(7)), Time = 0.11}
+	},
+	Lift = {
+		{CFrame = CFrame.new(0.5, -0.5, 0.5) * CFrame.Angles(math.rad(-15), math.rad(0), math.rad(0)), Time = 0.2},
+		{CFrame = CFrame.new(0.5, -0.4, 0.5) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.3},
+	},
+	SlowLift = {
+		{CFrame = CFrame.new(0.5, -0.5, 0.5) * CFrame.Angles(math.rad(-30), math.rad(0), math.rad(0)), Time = 0.5},
+		{CFrame = CFrame.new(0.5, -0.4, 0.5) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 1},
+	},
+	Shit = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.2},
+		{CFrame = CFrame.new(-0.1, -0.2, 0.05) * CFrame.Angles(math.rad(-15), math.rad(30), math.rad(15)), Time = 0.4},
+		{CFrame = CFrame.new(-0.12, -0.22, 0.06) * CFrame.Angles(math.rad(-10), math.rad(60), math.rad(25)), Time = 0.6},
+		{CFrame = CFrame.new(-0.1, -0.18, 0.08) * CFrame.Angles(math.rad(-25), math.rad(30), math.rad(10)), Time = 0.8},
+		{CFrame = CFrame.new(0.2, -0.15, -0.05) * CFrame.Angles(math.rad(-5), math.rad(0), math.rad(-10)), Time = 1},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 1.2},
+	},
+	SwingOld = {
+		{CFrame = CFrame.new(0, -0.5, 0) * CFrame.Angles(math.rad(5), math.rad(0), math.rad(5)), Time = 0.2},
+		{CFrame = CFrame.new(0, -0.48, 0) * CFrame.Angles(math.rad(-5), math.rad(0), math.rad(-5)), Time = 0.25},
+		{CFrame = CFrame.new(0, -0.5, 0) * CFrame.Angles(math.rad(5), math.rad(0), math.rad(5)), Time = 0.2},
+		{CFrame = CFrame.new(0, -0.52, 0) * CFrame.Angles(math.rad(-5), math.rad(0), math.rad(-5)), Time = 0.25},
+	},		
+	throw = { 
+		{CFrame = CFrame.new(-0.04, -0.4, -1.05) * CFrame.Angles(math.rad(-30), math.rad(100), math.rad(-90)), Time = 0.15},
+		{CFrame = CFrame.new(0.32, -0.81, 0.10) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.20},
+		{CFrame = CFrame.new(0.10, -0.5, -0.3) * CFrame.Angles(math.rad(-40), math.rad(55), math.rad(-50)), Time = 0.30},
+		{CFrame = CFrame.new(-0.04, -0.4, 0.5) * CFrame.Angles(math.rad(-30), math.rad(80), math.rad(-90)), Time = 0.15}
+	},
+	OLD = { 
+		{CFrame = CFrame.new(0.150, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.15},
+		{CFrame = CFrame.new(0.02, -0.8, 0.05) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.25},
+		{CFrame = CFrame.new(0.80, -0.77, 0.9) * CFrame.Angles(math.rad(-30), math.rad(55), math.rad(-90)), Time = 0.20},
+		{CFrame = CFrame.new(0.150, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.15},
+		{CFrame = CFrame.new(0.3, -0.4, 0.6) * CFrame.Angles(math.rad(-8), math.rad(40), math.rad(-60)), Time = 0.1},
+		{CFrame = CFrame.new(-0.04, -0.4, -1.05) * CFrame.Angles(math.rad(-30), math.rad(100), math.rad(-90)), Time = 0.15},
+		{CFrame = CFrame.new(-0.04, -0.4, 0.5) * CFrame.Angles(math.rad(-30), math.rad(80), math.rad(-90)), Time = 0.15}
+	},
+	SwingAnimation = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.2},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(45), math.rad(0), math.rad(0)), Time = 0.2},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-45), math.rad(0), math.rad(0)), Time = 0.2},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.2},
+	},
+	ExhibitionV2 = {
+		{CFrame = CFrame.new(0.65, -0.6, 0.7) * CFrame.Angles(math.rad(-60), math.rad(70), math.rad(-100)), Time = 0.1},
+		{CFrame = CFrame.new(0.75, -0.65, 0.7) * CFrame.Angles(math.rad(-70), math.rad(80), math.rad(-50)), Time = 0.2},
+		{CFrame = CFrame.new(0.8, -0.7, 0.75) * CFrame.Angles(math.rad(-80), math.rad(90), math.rad(-40)), Time = 0.3}
+	},
+	FrontwardAscend = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.1},
+		{CFrame = CFrame.new(0, 0.2, -0.1) * CFrame.Angles(math.rad(10), math.rad(0), math.rad(0)), Time = 0.3},
+		{CFrame = CFrame.new(0, 0.4, -0.2) * CFrame.Angles(math.rad(20), math.rad(0), math.rad(0)), Time = 0.5},
+		{CFrame = CFrame.new(0, 0.2, -0.5) * CFrame.Angles(math.rad(10), math.rad(0), math.rad(0)), Time = 0.8},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 1.2}
+	},
+	SpiralReturn = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.05},
+		{CFrame = CFrame.new(0, 0, -1) * CFrame.Angles(math.rad(360), math.rad(0), math.rad(0)), Time = 0.3},
+		{CFrame = CFrame.new(0, 0, -2) * CFrame.Angles(math.rad(720), math.rad(0), math.rad(0)), Time = 0.6},
+		{CFrame = CFrame.new(0, 0, -1) * CFrame.Angles(math.rad(1080), math.rad(0), math.rad(0)), Time = 0.9},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(1440), math.rad(0), math.rad(0)), Time = 1.2},
+	},
+	Boomerang = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.05},
+		{CFrame = CFrame.new(1, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.15},
+		{CFrame = CFrame.new(2, 0, -1) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.3},
+		{CFrame = CFrame.new(1, 0, -2) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.45},
+		{CFrame = CFrame.new(0, 0, -1) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.6},
+		{CFrame = CFrame.new(-1, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.75},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.9},
+	},
+	SmoothFlow = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.05},
+		{CFrame = CFrame.new(0.5, 0, 0) * CFrame.Angles(math.rad(0), math.rad(10), math.rad(0)), Time = 0.2},
+		{CFrame = CFrame.new(1, 0, 0) * CFrame.Angles(math.rad(0), math.rad(20), math.rad(0)), Time = 0.4},
+		{CFrame = CFrame.new(0.5, 0, 0) * CFrame.Angles(math.rad(0), math.rad(10), math.rad(0)), Time = 0.6},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.8},
+	},
+	OldSmooth = {
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.1},
+		{CFrame = CFrame.new(0.25, -0.35, 0.3) * CFrame.Angles(math.rad(-15), math.rad(25), math.rad(-45)), Time = 0.3},
+		{CFrame = CFrame.new(0.5, 0, 0) * CFrame.Angles(math.rad(0), math.rad(10), math.rad(0)), Time = 0.5},
+		{CFrame = CFrame.new(0.625, -0.355, 0.295) * CFrame.Angles(math.rad(-42), math.rad(30), math.rad(-64)), Time = 0.7},
+		{CFrame = CFrame.new(0.750, -0.71, 0.29) * CFrame.Angles(math.rad(-57), math.rad(55), math.rad(-81)), Time = 0.9},
+		{CFrame = CFrame.new(0.5, 0, 0) * CFrame.Angles(math.rad(0), math.rad(10), math.rad(0)), Time = 1.1},
+		{CFrame = CFrame.new(0.25, -0.35, 0.3) * CFrame.Angles(math.rad(-15), math.rad(25), math.rad(-45)), Time = 1.3},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 1.5},
+	},		
+	SlowlySmooth = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.25},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.5},
+		{CFrame = CFrame.new(0.150, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.75},
+		{CFrame = CFrame.new(0.02, -0.8, 0.05) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 1},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 1.25},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 1.5},
+	},
+	['Meteor+'] = { 
+		{CFrame = CFrame.new(0.150, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.15},
+		{CFrame = CFrame.new(0.02, -0.8, 0.05) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.15}
+	},
+	ExhiCloneAndMeteor = {
+		{CFrame = CFrame.new(0.68, -0.7, 0.61) * CFrame.Angles(math.rad(-20), math.rad(45), math.rad(-85)), Time = 0.15},
+		{CFrame = CFrame.new(0.695, -0.705, 0.595) * CFrame.Angles(math.rad(-60), math.rad(48), math.rad(-65)), Time = 0.3},
+		{CFrame = CFrame.new(0.72, -0.72, 0.58) * CFrame.Angles(math.rad(-90), math.rad(52), math.rad(-40)), Time = 0.45},
+		{CFrame = CFrame.new(0.150, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.6},
+		{CFrame = CFrame.new(0.02, -0.8, 0.05) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.75}
+	},	
+	ExhibitionClone = {
+		{CFrame = CFrame.new(0.68, -0.7, 0.61) * CFrame.Angles(math.rad(-20), math.rad(45), math.rad(-85)), Time = 0.15},  
+		{CFrame = CFrame.new(0.695, -0.705, 0.595) * CFrame.Angles(math.rad(-60), math.rad(48), math.rad(-65)), Time = 0.3},  
+		{CFrame = CFrame.new(0.72, -0.72, 0.58) * CFrame.Angles(math.rad(-90), math.rad(52), math.rad(-40)), Time = 0.45}   
+	},	
+	LatestClone = {
+		{CFrame = CFrame.new(0.68, -0.72, 0.12) * CFrame.Angles(math.rad(-63), math.rad(57), math.rad(-49)), Time = 0.4},
+		{CFrame = CFrame.new(0.17, -1.18, 0.52) * CFrame.Angles(math.rad(-177), math.rad(56), math.rad(31)), Time = 0.4}
+	},
+	SpinClone = {
+		{CFrame = CFrame.new(0.5, -0.6, 0) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Time = 0.15},
+		{CFrame = CFrame.new(0.5, -0.55, 0) * CFrame.Angles(math.rad(0), math.rad(45), math.rad(0)), Time = 0.2},
+		{CFrame = CFrame.new(0.5, -0.5, 0) * CFrame.Angles(math.rad(0), math.rad(90), math.rad(0)), Time = 0.15},
+		{CFrame = CFrame.new(0.5, -0.55, 0) * CFrame.Angles(math.rad(0), math.rad(135), math.rad(0)), Time = 0.2},
+		{CFrame = CFrame.new(0.5, -0.6, 0) * CFrame.Angles(math.rad(0), math.rad(180), math.rad(0)), Time = 0.15},
+	},
+	--inums contribution lawl
+	["Inum's Ass"] = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.05},
+		{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.05},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.15},
+		{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.15},
+		{CFrame = CFrame.new(0.69, -0.77, 1.47) * CFrame.Angles(math.rad(-33), math.rad(57), math.rad(-81)), Time = 0.12},
+		{CFrame = CFrame.new(0.74, -0.92, 0.88) * CFrame.Angles(math.rad(147), math.rad(71), math.rad(53)), Time = 0.12},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(-90), math.rad(8), math.rad(5)), Time = 0.1},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(180), math.rad(3), math.rad(13)), Time = 0.1},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(90), math.rad(-5), math.rad(8)), Time = 0.1},
+		{CFrame = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), math.rad(-0), math.rad(-0)), Time = 0.1},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.1},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.2},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.15},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.05},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.1},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.05},
+		{CFrame = CFrame.new(0.63, -0.1, 1.37) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.15},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(295), math.rad(55), math.rad(290)), Time = 0.8},
+		{CFrame = CFrame.new(0.69, -0.71, 0.6) * CFrame.Angles(math.rad(200), math.rad(60), math.rad(1)), Time = 0.01},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(65), math.rad(-79)), Time = 0.1},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-98), math.rad(35), math.rad(-56)), Time = 0.2},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-45), math.rad(70), math.rad(-90)), Time = 0.07},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-89), math.rad(70), math.rad(-38)), Time = 0.13},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-89), math.rad(68), math.rad(-56)), Time = 0.12},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-65), math.rad(68), math.rad(-35)), Time = 0.19},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(54), math.rad(-56)), Time = 0.08},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-98), math.rad(38), math.rad(-23)), Time = 0.15},
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(98), math.rad(-354)), Time = 0.1},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-98), math.rad(65), math.rad(-68)), Time = 0.2},
+		{CFrame = CFrame.new(0.67, -0.66, 0.57) * CFrame.Angles(math.rad(-46), math.rad(45.73), math.rad(-85)), Time = 0.1},
+		{CFrame = CFrame.new(0.72, -0.71, 0.62) * CFrame.Angles(math.rad(-73), math.rad(59), math.rad(-50)), Time = 0.2},
+		{CFrame = CFrame.new(0.65, -0.68, 0.57) * CFrame.Angles(math.rad(-46), math.rad(45.73), math.rad(-76)), Time = 0.15},
+		{CFrame = CFrame.new(0.77, -0.71, 0.62) * CFrame.Angles(math.rad(-73), math.rad(76), math.rad(-32)), Time = 0.17},
+		{CFrame = CFrame.new(0.63, -0.68, 0.57) * CFrame.Angles(math.rad(-46), math.rad(65), math.rad(-65)), Time = 0.21},
+		{CFrame = CFrame.new(0.73, -0.71, 0.62) * CFrame.Angles(math.rad(-73), math.rad(49), math.rad(-25)), Time = 0.26}
+	},
+	Ware = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(65), math.rad(-79)), Time = 0.1},
+		{CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-98), math.rad(35), math.rad(-56)), Time = 0.2}
+	},
+    Wearish = {
+        {CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.1},
+        {CFrame = CFrame.new(0.7, -0.71, 0.58) * CFrame.Angles(math.rad(-84), math.rad(50), math.rad(-38)), Time = 0.17}
+    },
+    --https://media.discordapp.net/attachments/1149060010177994792/1149060015655751720/image.png?ex=657a0288&is=65678d88&hm=a37a5b3a55e14f8874c6cae3e6dd658dd712199fb0351737ba365491aa3eed59&=&format=webp&quality=lossless&width=478&height=571
+    --https://media.discordapp.net/attachments/1149060010177994792/1156242027973980190/attachment.gif?ex=6581ae4d&is=656f394d&hm=b3b8bfcfa3c356ef7d0618229af567c151ef7213fe3ae1f2dc03b773b407ffeb&=&width=329&height=571
+    Assura = {
+        {CFrame = CFrame.new(0.67, -0.66, 0.57) * CFrame.Angles(math.rad(-46), math.rad(45.73), math.rad(-85)), Time = 0.1},
+        {CFrame = CFrame.new(0.72, -0.71, 0.62) * CFrame.Angles(math.rad(-73), math.rad(59), math.rad(-50)), Time = 0.2}
+    },
+    ["Assura Old"] = {
+        {CFrame = CFrame.new(0.65, -0.68, 0.57) * CFrame.Angles(math.rad(-46), math.rad(45.73), math.rad(-76)), Time = 0.15},
+        {CFrame = CFrame.new(0.77, -0.71, 0.62) * CFrame.Angles(math.rad(-73), math.rad(76), math.rad(-32)), Time = 0.17},
+        {CFrame = CFrame.new(0.63, -0.68, 0.57) * CFrame.Angles(math.rad(-46), math.rad(65), math.rad(-65)), Time = 0.21},
+        {CFrame = CFrame.new(0.73, -0.71, 0.62) * CFrame.Angles(math.rad(-73), math.rad(49), math.rad(-25)), Time = 0.26}
+    },
+    ["Assura Combined"] = {
+        {CFrame = CFrame.new(0.67, -0.66, 0.57) * CFrame.Angles(math.rad(-46), math.rad(45.73), math.rad(-85)), Time = 0.12},
+        {CFrame = CFrame.new(0.72, -0.71, 0.62) * CFrame.Angles(math.rad(-73), math.rad(59), math.rad(-50)), Time = 0.14},
+        {CFrame = CFrame.new(0.65, -0.68, 0.57) * CFrame.Angles(math.rad(-46), math.rad(45.73), math.rad(-76)), Time = 0.15},
+        {CFrame = CFrame.new(0.77, -0.71, 0.62) * CFrame.Angles(math.rad(-73), math.rad(76), math.rad(-32)), Time = 0.17},
+        {CFrame = CFrame.new(0.63, -0.68, 0.57) * CFrame.Angles(math.rad(-46), math.rad(65), math.rad(-65)), Time = 0.21},
+        {CFrame = CFrame.new(0.73, -0.71, 0.62) * CFrame.Angles(math.rad(-73), math.rad(49), math.rad(-25)), Time = 0.26}
+    },
+	--scrxpted skidded from rise backend
+    ScrxptedIsBLACK = {
+        {CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-89), math.rad(68), math.rad(-56)), Time = 0.12},
+        {CFrame = CFrame.new(0.7, -0.71, 0.59) * CFrame.Angles(math.rad(-65), math.rad(68), math.rad(-35)), Time = 0.19}
+    },
+	--lunar vape
+	["Lunar Old"] = {
+		{CFrame = CFrame.new(0.150, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.15},
+		{CFrame = CFrame.new(0.02, -0.8, 0.05) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.15}
+	},
+	["Lunar New"] = {
+		{CFrame = CFrame.new(0.86, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.17},
+		{CFrame = CFrame.new(0.73, -0.8, 0.05) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.17}
+	},
+	["Lunar Fast"] = {
+		{CFrame = CFrame.new(0.95, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.15},
+		{CFrame = CFrame.new(0.40, -0.8, 0.05) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.15}
+	},
+	["LiquidBounceX"] = {
+		{CFrame = CFrame.new(-0.01, -0.3, -1.01) * CFrame.Angles(math.rad(-35), math.rad(90), math.rad(-90)), Time = 0.45},
+		{CFrame = CFrame.new(-0.01, -0.3, -1.01) * CFrame.Angles(math.rad(-35), math.rad(70), math.rad(-90)), Time = 0.45},
+		{CFrame = CFrame.new(-0.01, -0.3, 0.4) * CFrame.Angles(math.rad(-35), math.rad(70), math.rad(-90)), Time = 0.32}
+	},
+	["Auto Block"] = {
+		{CFrame = CFrame.new(-0.6, -0.2, 0.3) * CFrame.Angles(math.rad(0), math.rad(80), math.rad(65)), Time = 0.15},
+		{CFrame = CFrame.new(-0.6, -0.2, 0.3) * CFrame.Angles(math.rad(0), math.rad(110), math.rad(65)), Time = 0.15},
+		{CFrame = CFrame.new(-0.6, -0.2, 0.3) * CFrame.Angles(math.rad(0), math.rad(65), math.rad(65)), Time = 0.15}
+	},
+	Switch = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.1) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Time = 0.1},
+		{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(-179), math.rad(54), math.rad(33)), Time = 0.1}
+	},
+	Sideways = {
+		{CFrame = CFrame.new(5, -3, 2) * CFrame.Angles(math.rad(120), math.rad(160), math.rad(140)), Time = 0.12},
+		{CFrame = CFrame.new(5, -2.5, -1) * CFrame.Angles(math.rad(80), math.rad(180), math.rad(180)), Time = 0.12},
+		{CFrame = CFrame.new(5, -3.4, -3.3) * CFrame.Angles(math.rad(45), math.rad(160), math.rad(190)), Time = 0.12},
+		{CFrame = CFrame.new(5, -2.5, -1) * CFrame.Angles(math.rad(80), math.rad(180), math.rad(180)), Time = 0.12}
+	},
+	Stand = {
+		{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-30), math.rad(50), math.rad(-90)), Time = 0.1}
+	},
+}
 
 	local function closestpos(block, pos)
 		local blockpos = block:GetRenderCFrame()
@@ -9115,4 +10150,778 @@ task.spawn(function()
 	if not AutoLeave.Enabled then
 		AutoLeave.ToggleButton(false)
 	end
+end)
+
+
+GuiLibrary.RemoveObject('AtmosphereOptionsButton')
+run(function()
+	local Atmosphere = {Enabled = false}
+	local AtmosphereMethod = {Value = 'Custom'}
+	local skythemeobjects = {}
+	local SkyUp = {Value = ''}
+	local SkyDown = {Value = ''}
+	local SkyLeft = {Value = ''}
+	local SkyRight = {Value = ''}
+	local SkyFront = {Value = ''}
+	local SkyBack = {Value = ''}
+	local SkySun = {Value = ''}
+	local SkyMoon = {Value = ''}
+	local SkyColor = {Value = 1}
+	local skyobj
+	local skyatmosphereobj
+	local oldtime
+	local oldobjects = {}
+	local themetable = {
+		Custom = function() 
+			skyobj.SkyboxBk = tonumber(SkyBack.Value) and 'rbxassetid://'..SkyBack.Value or SkyBack.Value
+			skyobj.SkyboxDn = tonumber(SkyDown.Value) and 'rbxassetid://'..SkyDown.Value or SkyDown.Value
+			skyobj.SkyboxFt = tonumber(SkyFront.Value) and 'rbxassetid://'..SkyFront.Value or SkyFront.Value
+			skyobj.SkyboxLf = tonumber(SkyLeft.Value) and 'rbxassetid://'..SkyLeft.Value or SkyLeft.Value
+			skyobj.SkyboxRt = tonumber(SkyRight.Value) and 'rbxassetid://'..SkyRight.Value or SkyRight.Value
+			skyobj.SkyboxUp = tonumber(SkyUp.Value) and 'rbxassetid://'..SkyUp.Value or SkyUp.Value
+			skyobj.SunTextureId = tonumber(SkySun.Value) and 'rbxassetid://'..SkySun.Value or SkySun.Value
+			skyobj.MoonTextureId = tonumber(SkyMoon.Value) and 'rbxassetid://'..SkyMoon.Value or SkyMoon.Value
+		end,
+		Purple = function()
+            skyobj.SkyboxBk = 'rbxassetid://8539982183'
+            skyobj.SkyboxDn = 'rbxassetid://8539981943'
+            skyobj.SkyboxFt = 'rbxassetid://8539981721'
+            skyobj.SkyboxLf = 'rbxassetid://8539981424'
+            skyobj.SkyboxRt = 'rbxassetid://8539980766'
+            skyobj.SkyboxUp = 'rbxassetid://8539981085'
+			skyobj.MoonAngularSize = 0
+            skyobj.SunAngularSize = 0
+            skyobj.StarCount = 3e3
+		end,
+		Galaxy = function()
+            skyobj.SkyboxBk = 'rbxassetid://159454299'
+            skyobj.SkyboxDn = 'rbxassetid://159454296'
+            skyobj.SkyboxFt = 'rbxassetid://159454293'
+            skyobj.SkyboxLf = 'rbxassetid://159454293'
+            skyobj.SkyboxRt = 'rbxassetid://159454293'
+            skyobj.SkyboxUp = 'rbxassetid://159454288'
+			skyobj.SunAngularSize = 0
+		end,
+		BetterNight = function()
+			skyobj.SkyboxBk = 'rbxassetid://155629671'
+            skyobj.SkyboxDn = 'rbxassetid://12064152'
+            skyobj.SkyboxFt = 'rbxassetid://155629677'
+            skyobj.SkyboxLf = 'rbxassetid://155629662'
+            skyobj.SkyboxRt = 'rbxassetid://155629666'
+            skyobj.SkyboxUp = 'rbxassetid://155629686'
+			skyobj.SunAngularSize = 0
+		end,
+		BetterNight2 = function()
+			skyobj.SkyboxBk = 'rbxassetid://248431616'
+            skyobj.SkyboxDn = 'rbxassetid://248431677'
+            skyobj.SkyboxFt = 'rbxassetid://248431598'
+            skyobj.SkyboxLf = 'rbxassetid://248431686'
+            skyobj.SkyboxRt = 'rbxassetid://248431611'
+            skyobj.SkyboxUp = 'rbxassetid://248431605'
+			skyobj.StarCount = 3000
+		end,
+		MagentaOrange = function()
+			skyobj.SkyboxBk = 'rbxassetid://566616113'
+            skyobj.SkyboxDn = 'rbxassetid://566616232'
+            skyobj.SkyboxFt = 'rbxassetid://566616141'
+            skyobj.SkyboxLf = 'rbxassetid://566616044'
+            skyobj.SkyboxRt = 'rbxassetid://566616082'
+            skyobj.SkyboxUp = 'rbxassetid://566616187'
+			skyobj.StarCount = 3000
+		end,
+		Purple2 = function()
+			skyobj.SkyboxBk = 'rbxassetid://8107841671'
+			skyobj.SkyboxDn = 'rbxassetid://6444884785'
+			skyobj.SkyboxFt = 'rbxassetid://8107841671'
+			skyobj.SkyboxLf = 'rbxassetid://8107841671'
+			skyobj.SkyboxRt = 'rbxassetid://8107841671'
+			skyobj.SkyboxUp = 'rbxassetid://8107849791'
+			skyobj.SunTextureId = 'rbxassetid://6196665106'
+			skyobj.MoonTextureId = 'rbxassetid://6444320592'
+			skyobj.MoonAngularSize = 0
+		end,
+		Galaxy2 = function()
+			skyobj.SkyboxBk = 'rbxassetid://14164368678'
+			skyobj.SkyboxDn = 'rbxassetid://14164386126'
+			skyobj.SkyboxFt = 'rbxassetid://14164389230'
+			skyobj.SkyboxLf = 'rbxassetid://14164398493'
+			skyobj.SkyboxRt = 'rbxassetid://14164402782'
+			skyobj.SkyboxUp = 'rbxassetid://14164405298'
+			skyobj.SunTextureId = 'rbxassetid://8281961896'
+			skyobj.MoonTextureId = 'rbxassetid://6444320592'
+			skyobj.SunAngularSize = 0
+			skyobj.MoonAngularSize = 0
+		end,
+		Pink = function()
+		skyobj.SkyboxBk = 'rbxassetid://271042516'
+		skyobj.SkyboxDn = 'rbxassetid://271077243'
+		skyobj.SkyboxFt = 'rbxassetid://271042556'
+		skyobj.SkyboxLf = 'rbxassetid://271042310'
+		skyobj.SkyboxRt = 'rbxassetid://271042467'
+		skyobj.SkyboxUp = 'rbxassetid://271077958'
+	end,
+	Purple3 = function()
+		skyobj.SkyboxBk = 'rbxassetid://433274085'
+		skyobj.SkyboxDn = 'rbxassetid://433274194'
+		skyobj.SkyboxFt = 'rbxassetid://433274131'
+		skyobj.SkyboxLf = 'rbxassetid://433274370'
+		skyobj.SkyboxRt = 'rbxassetid://433274429'
+		skyobj.SkyboxUp = 'rbxassetid://433274285'
+	end,
+	DarkishPink = function()
+		skyobj.SkyboxBk = 'rbxassetid://570555736'
+		skyobj.SkyboxDn = 'rbxassetid://570555964'
+		skyobj.SkyboxFt = 'rbxassetid://570555800'
+		skyobj.SkyboxLf = 'rbxassetid://570555840'
+		skyobj.SkyboxRt = 'rbxassetid://570555882'
+		skyobj.SkyboxUp = 'rbxassetid://570555929'
+	end,
+	Space = function()
+		skyobj.MoonAngularSize = 0
+		skyobj.SunAngularSize = 0
+		skyobj.SkyboxBk = 'rbxassetid://166509999'
+		skyobj.SkyboxDn = 'rbxassetid://166510057'
+		skyobj.SkyboxFt = 'rbxassetid://166510116'
+		skyobj.SkyboxLf = 'rbxassetid://166510092'
+		skyobj.SkyboxRt = 'rbxassetid://166510131'
+		skyobj.SkyboxUp = 'rbxassetid://166510114'
+	end,
+	Galaxy3 = function()
+		skyobj.MoonAngularSize = 0
+		skyobj.SunAngularSize = 0
+		skyobj.SkyboxBk = 'rbxassetid://14543264135'
+		skyobj.SkyboxDn = 'rbxassetid://14543358958'
+		skyobj.SkyboxFt = 'rbxassetid://14543257810'
+		skyobj.SkyboxLf = 'rbxassetid://14543275895'
+		skyobj.SkyboxRt = 'rbxassetid://14543280890'
+		skyobj.SkyboxUp = 'rbxassetid://14543371676'
+	end,
+	NetherWorld = function()
+		skyobj.MoonAngularSize = 0
+		skyobj.SunAngularSize = 0
+		skyobj.SkyboxBk = 'rbxassetid://14365019002'
+		skyobj.SkyboxDn = 'rbxassetid://14365023350'
+		skyobj.SkyboxFt = 'rbxassetid://14365018399'
+		skyobj.SkyboxLf = 'rbxassetid://14365018705'
+		skyobj.SkyboxRt = 'rbxassetid://14365018143'
+		skyobj.SkyboxUp = 'rbxassetid://14365019327'
+	end,
+	Nebula = function()
+		skyobj.MoonAngularSize = 0
+		skyobj.SunAngularSize = 0
+		skyobj.SkyboxBk = 'rbxassetid://5260808177'
+		skyobj.SkyboxDn = 'rbxassetid://5260653793'
+		skyobj.SkyboxFt = 'rbxassetid://5260817288'
+		skyobj.SkyboxLf = 'rbxassetid://5260800833'
+		skyobj.SkyboxRt = 'rbxassetid://5260811073'
+		skyobj.SkyboxUp = 'rbxassetid://5260824661'
+	end,
+	PurpleNight = function()
+		skyobj.MoonAngularSize = 0
+		skyobj.SunAngularSize = 0
+		skyobj.SkyboxBk = 'rbxassetid://5260808177'
+		skyobj.SkyboxDn = 'rbxassetid://5260653793'
+		skyobj.SkyboxFt = 'rbxassetid://5260817288'
+		skyobj.SkyboxLf = 'rbxassetid://5260800833'
+		skyobj.SkyboxRt = 'rbxassetid://5260800833'
+		skyobj.SkyboxUp = 'rbxassetid://5084576400'
+	end,
+	Aesthetic = function()
+		skyobj.MoonAngularSize = 0
+		skyobj.SunAngularSize = 0
+		skyobj.SkyboxBk = 'rbxassetid://1417494030'
+		skyobj.SkyboxDn = 'rbxassetid://1417494146'
+		skyobj.SkyboxFt = 'rbxassetid://1417494253'
+		skyobj.SkyboxLf = 'rbxassetid://1417494402'
+		skyobj.SkyboxRt = 'rbxassetid://1417494499'
+		skyobj.SkyboxUp = 'rbxassetid://1417494643'
+	end,
+	Aesthetic2 = function()
+		skyobj.MoonAngularSize = 0
+		skyobj.SunAngularSize = 0
+		skyobj.SkyboxBk = 'rbxassetid://600830446'
+		skyobj.SkyboxDn = 'rbxassetid://600831635'
+		skyobj.SkyboxFt = 'rbxassetid://600832720'
+		skyobj.SkyboxLf = 'rbxassetid://600886090'
+		skyobj.SkyboxRt = 'rbxassetid://600833862'
+		skyobj.SkyboxUp = 'rbxassetid://600835177'
+	end,
+	Pastel = function()
+		skyobj.SunAngularSize = 0
+		skyobj.MoonAngularSize = 0
+		skyobj.SkyboxBk = 'rbxassetid://2128458653'
+		skyobj.SkyboxDn = 'rbxassetid://2128462480'
+		skyobj.SkyboxFt = 'rbxassetid://2128458653'
+		skyobj.SkyboxLf = 'rbxassetid://2128462027'
+		skyobj.SkyboxRt = 'rbxassetid://2128462027'
+		skyobj.SkyboxUp = 'rbxassetid://2128462236'
+	end,
+	PurpleClouds = function()
+		skyobj.SkyboxBk = 'rbxassetid://570557514'
+		skyobj.SkyboxDn = 'rbxassetid://570557775'
+		skyobj.SkyboxFt = 'rbxassetid://570557559'
+		skyobj.SkyboxLf = 'rbxassetid://570557620'
+		skyobj.SkyboxRt = 'rbxassetid://570557672'
+		skyobj.SkyboxUp = 'rbxassetid://570557727'
+	end,
+	BetterSky = function()
+		if skyobj then
+		skyobj.SkyboxBk = 'rbxassetid://591058823'
+		skyobj.SkyboxDn = 'rbxassetid://591059876'
+		skyobj.SkyboxFt = 'rbxassetid://591058104'
+		skyobj.SkyboxLf = 'rbxassetid://591057861'
+		skyobj.SkyboxRt = 'rbxassetid://591057625'
+		skyobj.SkyboxUp = 'rbxassetid://591059642'
+		end
+	end,
+	BetterNight3 = function()
+		skyobj.MoonTextureId = 'rbxassetid://1075087760'
+		skyobj.SkyboxBk = 'rbxassetid://2670643994'
+		skyobj.SkyboxDn = 'rbxassetid://2670643365'
+		skyobj.SkyboxFt = 'rbxassetid://2670643214'
+		skyobj.SkyboxLf = 'rbxassetid://2670643070'
+		skyobj.SkyboxRt = 'rbxassetid://2670644173'
+		skyobj.SkyboxUp = 'rbxassetid://2670644331'
+		skyobj.MoonAngularSize = 1.5
+		skyobj.StarCount = 500
+	end,
+	Orange = function()
+		skyobj.SkyboxBk = 'rbxassetid://150939022'
+		skyobj.SkyboxDn = 'rbxassetid://150939038'
+		skyobj.SkyboxFt = 'rbxassetid://150939047'
+		skyobj.SkyboxLf = 'rbxassetid://150939056'
+		skyobj.SkyboxRt = 'rbxassetid://150939063'
+		skyobj.SkyboxUp = 'rbxassetid://150939082'
+	end,
+	DarkMountains = function()
+		skyobj.SkyboxBk = 'rbxassetid://5098814730'
+		skyobj.SkyboxDn = 'rbxassetid://5098815227'
+		skyobj.SkyboxFt = 'rbxassetid://5098815653'
+		skyobj.SkyboxLf = 'rbxassetid://5098816155'
+		skyobj.SkyboxRt = 'rbxassetid://5098820352'
+		skyobj.SkyboxUp = 'rbxassetid://5098819127'
+	end,
+	FlamingSunset = function()
+		skyobj.SkyboxBk = 'rbxassetid://415688378'
+		skyobj.SkyboxDn = 'rbxassetid://415688193'
+		skyobj.SkyboxFt = 'rbxassetid://415688242'
+		skyobj.SkyboxLf = 'rbxassetid://415688310'
+		skyobj.SkyboxRt = 'rbxassetid://415688274'
+		skyobj.SkyboxUp = 'rbxassetid://415688354'
+	end,
+	NewYork = function()
+		skyobj.SkyboxBk = 'rbxassetid://11333973069'
+		skyobj.SkyboxDn = 'rbxassetid://11333969768'
+		skyobj.SkyboxFt = 'rbxassetid://11333964303'
+		skyobj.SkyboxLf = 'rbxassetid://11333971332'
+		skyobj.SkyboxRt = 'rbxassetid://11333982864'
+		skyobj.SkyboxUp = 'rbxassetid://11333967970'
+		skyobj.SunAngularSize = 0
+	end,
+	Aesthetic3 = function()
+		skyobj.SkyboxBk = 'rbxassetid://151165214'
+		skyobj.SkyboxDn = 'rbxassetid://151165197'
+		skyobj.SkyboxFt = 'rbxassetid://151165224'
+		skyobj.SkyboxLf = 'rbxassetid://151165191'
+		skyobj.SkyboxRt = 'rbxassetid://151165206'
+		skyobj.SkyboxUp = 'rbxassetid://151165227'
+	end,
+	FakeClouds = function()
+		skyobj.SkyboxBk = 'rbxassetid://8496892810'
+		skyobj.SkyboxDn = 'rbxassetid://8496896250'
+		skyobj.SkyboxFt = 'rbxassetid://8496892810'
+		skyobj.SkyboxLf = 'rbxassetid://8496892810'
+		skyobj.SkyboxRt = 'rbxassetid://8496892810'
+		skyobj.SkyboxUp = 'rbxassetid://8496897504'
+		skyobj.SunAngularSize = 0
+	end,
+	LunarNight = function()
+		skyobj.SkyboxBk = 'rbxassetid://187713366'
+		skyobj.SkyboxDn = 'rbxassetid://187712428'
+		skyobj.SkyboxFt = 'rbxassetid://187712836'
+		skyobj.SkyboxLf = 'rbxassetid://187713755'
+		skyobj.SkyboxRt = 'rbxassetid://187714525'
+		skyobj.SkyboxUp = 'rbxassetid://187712111'
+		skyobj.SunAngularSize = 0
+		skyobj.StarCount = 0
+	end,
+	ZYLA = function()
+		skyobj.SkyboxBk = 'rbxassetid://159454299'
+		skyobj.SkyboxDn = 'rbxassetid://159454296'
+		skyobj.SkyboxFt = 'rbxassetid://159454293'
+		skyobj.SkyboxLf = 'rbxassetid://159454286'
+		skyobj.SkyboxRt = 'rbxassetid://159454300'
+		skyobj.SkyboxUp = 'rbxassetid://159454288'
+	end,
+	--moon
+	--https://cdn.discordapp.com/attachments/1180128067239292949/1184266746992009266/mon.png?ex=658b595b&is=6578e45b&hm=fc826fbd3a45f8b643305e6203d011ac8b65c876ccdaab6e9882799585e0ae38&
+	PurpleNebula = function()
+		skyobj.SkyboxBk = 'rbxassetid://151165214'
+		skyobj.SkyboxDn = 'rbxassetid://151165197'
+		skyobj.SkyboxFt = 'rbxassetid://151165224'
+		skyobj.SkyboxLf = 'rbxassetid://151165191'
+		skyobj.SkyboxRt = 'rbxassetid://151165206'
+		skyobj.SkyboxUp = 'rbxassetid://151165227'
+	end,
+	NightSky = function()
+		skyobj.SkyboxBk = 'rbxassetid://12064107'
+		skyobj.SkyboxDn = 'rbxassetid://12064152'
+		skyobj.SkyboxFt = 'rbxassetid://12064121'
+		skyobj.SkyboxLf = 'rbxassetid://12063984'
+		skyobj.SkyboxRt = 'rbxassetid://12064115'
+		skyobj.SkyboxUp = 'rbxassetid://12064131'
+	end,
+	PinkDaylight = function()
+		skyobj.SkyboxBk = 'rbxassetid://271042516'
+		skyobj.SkyboxDn = 'rbxassetid://271077243'
+		skyobj.SkyboxFt = 'rbxassetid://271042556'
+		skyobj.SkyboxLf = 'rbxassetid://271042310'
+		skyobj.SkyboxRt = 'rbxassetid://271042467'
+		skyobj.SkyboxUp = 'rbxassetid://271077958'
+	end,
+	
+	MorningGlow = function()
+		skyobj.SkyboxBk = 'rbxassetid://271042516'
+		skyobj.SkyboxDn = 'rbxassetid://271077243'
+		skyobj.SkyboxFt = 'rbxassetid://271042556'
+		skyobj.SkyboxLf = 'rbxassetid://271042310'
+		skyobj.SkyboxRt = 'rbxassetid://271042467'
+		skyobj.SkyboxUp = 'rbxassetid://271077958'
+	end,
+	SettingSun = function()
+		skyobj.SkyboxBk = 'rbxassetid://626460377'
+		skyobj.SkyboxDn = 'rbxassetid://626460216'
+		skyobj.SkyboxFt = 'rbxassetid://626460513'
+		skyobj.SkyboxLf = 'rbxassetid://626473032'
+		skyobj.SkyboxRt = 'rbxassetid://626458639'
+		skyobj.SkyboxUp = 'rbxassetid://626460625'
+	end,
+	FadeBlue = function()
+		skyobj.SkyboxBk = 'rbxassetid://153695414'
+		skyobj.SkyboxDn = 'rbxassetid://153695352'
+		skyobj.SkyboxFt = 'rbxassetid://153695452'
+		skyobj.SkyboxLf = 'rbxassetid://153695320'
+		skyobj.SkyboxRt = 'rbxassetid://153695383'
+		skyobj.SkyboxUp = 'rbxassetid://153695471'
+	end,
+	ElegantMorning = function()
+		skyobj.SkyboxBk = 'rbxassetid://153767241'
+		skyobj.SkyboxDn = 'rbxassetid://153767216'
+		skyobj.SkyboxFt = 'rbxassetid://153767266'
+		skyobj.SkyboxLf = 'rbxassetid://153767200'
+		skyobj.SkyboxRt = 'rbxassetid://153767231'
+		skyobj.SkyboxUp = 'rbxassetid://153767288'
+	end,
+	Neptune = function()
+		skyobj.SkyboxBk = 'rbxassetid://218955819'
+		skyobj.SkyboxDn = 'rbxassetid://218953419'
+		skyobj.SkyboxFt = 'rbxassetid://218954524'
+		skyobj.SkyboxLf = 'rbxassetid://218958493'
+		skyobj.SkyboxRt = 'rbxassetid://218957134'
+		skyobj.SkyboxUp = 'rbxassetid://218950090'
+	end,
+	Redshift = function()
+		skyobj.SkyboxBk = 'rbxassetid://401664839'
+		skyobj.SkyboxDn = 'rbxassetid://401664862'
+		skyobj.SkyboxFt = 'rbxassetid://401664960'
+		skyobj.SkyboxLf = 'rbxassetid://401664881'
+		skyobj.SkyboxRt = 'rbxassetid://401664901'
+		skyobj.SkyboxUp = 'rbxassetid://401664936'
+	end,
+	AestheticNight = function()
+		skyobj.SkyboxBk = 'rbxassetid://1045964490'
+		skyobj.SkyboxDn = 'rbxassetid://1045964368'
+		skyobj.SkyboxFt = 'rbxassetid://1045964655'
+		skyobj.SkyboxLf = 'rbxassetid://1045964655'
+		skyobj.SkyboxRt = 'rbxassetid://1045964655'
+		skyobj.SkyboxUp = 'rbxassetid://1045962969'
+	end,
+	ZeroPrime = function()
+		skyobj.SkyboxBk = 'rbxassetid://14330565986'
+		skyobj.SkyboxDn = 'rbxassetid://14330586340'
+		skyobj.SkyboxFt = 'rbxassetid://14330572603'
+		skyobj.SkyboxLf = 'rbxassetid://14330578858'
+		skyobj.SkyboxRt = 'rbxassetid://14330569172'
+		skyobj.SkyboxUp = 'rbxassetid://14330582541'
+	end,
+	SFOTH = function()
+		skyobj.SkyboxBk = 'rbxassetid://9528026790'
+		skyobj.SkyboxDn = 'rbxassetid://9528027279'
+		skyobj.SkyboxFt = 'rbxassetid://9528026996'
+		skyobj.SkyboxLf = 'rbxassetid://9528026465'
+		skyobj.SkyboxRt = 'rbxassetid://9528018382'
+		skyobj.SkyboxUp = 'rbxassetid://9528027158'
+	end,
+	PitchDark = function()
+		skyobj.StarCount = 0
+		oldtime = lightingService.TimeOfDay
+		lightingService.TimeOfDay = '00:00:00'
+		table.insert(Atmosphere.Connections, lightingService:GetPropertyChangedSignal('TimeOfDay'):Connect(function()
+			skyobj.StarCount = 0
+			lightingService.TimeOfDay = '00:00:00'
+		end))
+	end
+}
+
+Atmosphere = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+		Name = 'Atmosphere',
+		ExtraText = function()
+			return AtmosphereMethod.Value ~= 'Custom' and AtmosphereMethod.Value or ''
+		end,
+		Function = function(callback)
+			if callback then 
+				for i,v in next, (lightingService:GetChildren()) do 
+					if v:IsA('PostEffect') or v:IsA('Sky') then 
+						table.insert(oldobjects, v)
+						v.Parent = game
+					end
+				end
+				skyobj = Instance.new('Sky')
+				skyobj.Parent = lightingService
+				skyatmosphereobj = Instance.new('ColorCorrectionEffect')
+			    skyatmosphereobj.TintColor = Color3.fromHSV(SkyColor.Hue, SkyColor.Sat, SkyColor.Value)
+			    skyatmosphereobj.Parent = lightingService
+				task.spawn(themetable[AtmosphereMethod.Value])
+			else
+				if skyobj then skyobj:Destroy() end
+				if skyatmosphereobj then skyatmosphereobj:Destroy() end
+				for i,v in next, (oldobjects) do 
+					v.Parent = lightingService
+				end
+				if oldtime then 
+					lightingService.TimeOfDay = oldtime
+					oldtime = nil
+				end
+				table.clear(oldobjects)
+			end
+		end
+	})
+	local themetab = {'Custom'}
+	for i,v in themetable do 
+		table.insert(themetab, i)
+	end
+	AtmosphereMethod = Atmosphere.CreateDropdown({
+		Name = 'Mode',
+		List = themetab,
+		Function = function(val)
+			task.spawn(function()
+			if Atmosphere.Enabled then 
+				Atmosphere.ToggleButton(false)
+				if val == 'Custom' then task.wait() end -- why is this needed :bruh:
+				Atmosphere.ToggleButton(false)
+			end
+			for i,v in skythemeobjects do 
+				v.Object.Visible = AtmosphereMethod.Value == 'Custom'
+			end
+		    end)
+		end
+	})
+	SkyUp = Atmosphere.CreateTextBox({
+		Name = 'SkyUp',
+		TempText = 'Sky Top ID',
+		FocusLost = function(enter) 
+			if Atmosphere.Enabled then 
+				Atmosphere.ToggleButton(false)
+				Atmosphere.ToggleButton(false)
+			end
+		end
+	})
+	SkyDown = Atmosphere.CreateTextBox({
+		Name = 'SkyDown',
+		TempText = 'Sky Bottom ID',
+		FocusLost = function(enter) 
+			if Atmosphere.Enabled then 
+				Atmosphere.ToggleButton(false)
+				Atmosphere.ToggleButton(false)
+			end
+		end
+	})
+	SkyLeft = Atmosphere.CreateTextBox({
+		Name = 'SkyLeft',
+		TempText = 'Sky Left ID',
+		FocusLost = function(enter) 
+			if Atmosphere.Enabled then 
+				Atmosphere.ToggleButton(false)
+				Atmosphere.ToggleButton(false)
+			end
+		end
+	})
+	SkyRight = Atmosphere.CreateTextBox({
+		Name = 'SkyRight',
+		TempText = 'Sky Right ID',
+		FocusLost = function(enter) 
+			if Atmosphere.Enabled then 
+				Atmosphere.ToggleButton(false)
+				Atmosphere.ToggleButton(false)
+			end
+		end
+	})
+	SkyFront = Atmosphere.CreateTextBox({
+		Name = 'SkyFront',
+		TempText = 'Sky Front ID',
+		FocusLost = function(enter) 
+			if Atmosphere.Enabled then 
+				Atmosphere.ToggleButton(false)
+				Atmosphere.ToggleButton(false)
+			end
+		end
+	})
+	SkyBack = Atmosphere.CreateTextBox({
+		Name = 'SkyBack',
+		TempText = 'Sky Back ID',
+		FocusLost = function(enter) 
+			if Atmosphere.Enabled then 
+				Atmosphere.ToggleButton(false)
+				Atmosphere.ToggleButton(false)
+			end
+		end
+	})
+	SkySun = Atmosphere.CreateTextBox({
+		Name = 'SkySun',
+		TempText = 'Sky Sun ID',
+		FocusLost = function(enter) 
+			if Atmosphere.Enabled then 
+				Atmosphere.ToggleButton(false)
+				Atmosphere.ToggleButton(false)
+			end
+		end
+	})
+	SkyMoon = Atmosphere.CreateTextBox({
+		Name = 'SkyMoon',
+		TempText = 'Sky Moon ID',
+		FocusLost = function(enter) 
+			if Atmosphere.Enabled then 
+				Atmosphere.ToggleButton(false)
+				Atmosphere.ToggleButton(false)
+			end
+		end
+	})
+	SkyColor = Atmosphere.CreateColorSlider({
+		Name = 'Color',
+		Function = function(h, s, v)
+			if skyatmosphereobj then 
+				skyatmosphereobj.TintColor = Color3.fromHSV(SkyColor.Hue, SkyColor.Sat, SkyColor.Value)
+			end
+		end
+	})
+	table.insert(skythemeobjects, SkyUp)
+	table.insert(skythemeobjects, SkyDown)
+	table.insert(skythemeobjects, SkyLeft)
+	table.insert(skythemeobjects, SkyRight)
+	table.insert(skythemeobjects, SkyFront)
+	table.insert(skythemeobjects, SkyBack)
+	table.insert(skythemeobjects, SkySun)
+	table.insert(skythemeobjects, SkyMoon)
+end)
+
+run(function()
+	local AutoUpgradeEra = {}
+	AutoUpgradeEra = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+		Name = 'AutoUpgradeEra',
+		Function = function(calling)
+			if calling then 
+				task.spawn(function()
+					repeat task.wait()
+						local args = {
+							[1] = {
+								["era"] = "iron_era"
+							}
+						}
+						game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("RequestPurchaseEra"):InvokeServer(unpack(args))
+						local args = {
+							[1] = {
+								["era"] = "diamond_era"
+							}
+						}						
+						game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("RequestPurchaseEra"):InvokeServer(unpack(args))
+						local args = {
+							[1] = {
+								["era"] = "emerald_era"
+							}
+						}					
+						game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("RequestPurchaseEra"):InvokeServer(unpack(args))
+						local args = {
+							[1] = {
+								["upgrade"] = "altar_i"
+							}
+						}
+						game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.RequestPurchaseTeamUpgrade:InvokeServer(unpack(args))
+						local args = {
+							[1] = {
+								["upgrade"] = "bed_defense_i"
+							}
+						}
+						game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.RequestPurchaseTeamUpgrade:InvokeServer(unpack(args))						
+						local args = {
+							[1] = {
+								["upgrade"] = "destruction_i"
+							}
+						}
+						game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.RequestPurchaseTeamUpgrade:InvokeServer(unpack(args))
+						local args = {
+							[1] = {
+								["upgrade"] = "magic_i"
+							}
+						}
+						game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.RequestPurchaseTeamUpgrade:InvokeServer(unpack(args))
+						local args = {
+							[1] = {
+								["upgrade"] = "altar_ii"
+							}
+						}
+						game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.RequestPurchaseTeamUpgrade:InvokeServer(unpack(args))
+						local args = {
+							[1] = {
+								["upgrade"] = "destruction_ii"
+							}
+						}
+						game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.RequestPurchaseTeamUpgrade:InvokeServer(unpack(args))
+						local args = {
+							[1] = {
+								["upgrade"] = "magic_ii"
+							}
+						}
+						game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.RequestPurchaseTeamUpgrade:InvokeServer(unpack(args))
+						local args = {
+							[1] = {
+								["upgrade"] = "altar_iii"
+							}
+						}
+						game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.RequestPurchaseTeamUpgrade:InvokeServer(unpack(args))
+					until (not AutoUpgradeEra.Enabled)
+				end)
+			end
+		end
+	})
+end)
+
+run(function()
+	ChatPosition = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+		Name = "ChatPosition",
+		Function = function(callback)
+			if callback then
+				  game:GetService("StarterGui"):SetCore('ChatWindowPosition', UDim2.new(0, 0, 0.7, 0))
+			  else
+				  game:GetService("StarterGui"):SetCore('ChatWindowPosition', UDim2.new(0, 0, 0, 0))
+			end
+		end,
+	})
+end)
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Workspace = game:GetService("Workspace")
+local objs = game:GetObjects("rbxassetid://18416195473")
+local import = objs[1]
+import.Parent = game:GetService("ReplicatedStorage")
+index = {
+    {
+        name = "wood_sword",
+        offset = CFrame.Angles(math.rad(0),math.rad(-100),math.rad(-90)),
+        model = import:WaitForChild("Wood_Sword"),
+    },
+    {
+        name = "stone_sword",
+        offset = CFrame.Angles(math.rad(0),math.rad(-100),math.rad(-90)),
+        model = import:WaitForChild("Stone_Sword"),
+    },
+    {
+        name = "iron_sword",
+        offset = CFrame.Angles(math.rad(0),math.rad(-100),math.rad(-90)),
+        model = import:WaitForChild("Iron_Sword"),
+    },
+    {
+        name = "diamond_sword",
+        offset = CFrame.Angles(math.rad(0),math.rad(-100),math.rad(-90)),
+        model = import:WaitForChild("Diamond_Sword"),
+    },
+    {
+        name = "emerald_sword",
+        offset = CFrame.Angles(math.rad(0),math.rad(-100),math.rad(-90)),
+        model = import:WaitForChild("Diamond_Sword"),
+    }, 
+    {
+        name = "rageblade",
+        offset = CFrame.Angles(math.rad(0),math.rad(-100),math.rad(-90)),
+        model = import:WaitForChild("Diamond_Sword"),
+    }, 
+ { 
+	    name = "wood_pickaxe",
+	    offset = CFrame.Angles(math.rad(0), math.rad(-180), math.rad(-95)),
+		model = import:WaitForChild("Wood_Pickaxe"),
+	},
+	{
+		name = "stone_pickaxe",
+		offset = CFrame.Angles(math.rad(0), math.rad(-180), math.rad(-95)),
+		model = import:WaitForChild("Stone_Pickaxe"),
+	},
+        {
+		name = "iron_pickaxe",
+		offset = CFrame.Angles(math.rad(0), math.rad(-180), math.rad(-95)),
+		model = import:WaitForChild("Iron_Pickaxe"),
+	},
+	{
+		name = "diamond_pickaxe",
+		offset = CFrame.Angles(math.rad(0), math.rad(80), math.rad(-95)),
+		model = import:WaitForChild("Diamond_Pickaxe"),
+	  },
+    {
+              
+        name = "wood_axe",
+        offset = CFrame.Angles(math.rad(0), math.rad(-10), math.rad(-95)),
+        model = import:WaitForChild("Wood_Axe"),
+    },
+    {
+        name = "stone_axe",
+        offset = CFrame.Angles(math.rad(0), math.rad(-10), math.rad(-95)),
+        model = import:WaitForChild("Stone_Axe"),
+    },
+    {
+        name = "iron_axe",
+        offset = CFrame.Angles(math.rad(0), math.rad(-10), math.rad(-95)),
+        model = import:WaitForChild("Iron_Axe"),
+     },
+     {
+        name = "diamond_axe",
+        offset = CFrame.Angles(math.rad(0), math.rad(-89), math.rad(-95)),
+        model = import:WaitForChild("Diamond_Axe"),
+     },
+
+
+
+
+ }
+local func = Workspace:WaitForChild("Camera").Viewmodel.ChildAdded:Connect(function(tool)
+    if(not tool:IsA("Accessory")) then return end
+    for i,v in pairs(index) do
+        if(v.name == tool.Name) then
+            for i,v in pairs(tool:GetDescendants()) do
+                if(v:IsA("Part") or v:IsA("MeshPart") or v:IsA("UnionOperation")) then
+                    v.Transparency = 1
+                end
+            end
+            local model = v.model:Clone()
+            model.CFrame = tool:WaitForChild("Handle").CFrame * v.offset
+            model.CFrame *= CFrame.Angles(math.rad(0),math.rad(-50),math.rad(0))
+            model.Parent = tool
+            local weld = Instance.new("WeldConstraint",model)
+            weld.Part0 = model
+            weld.Part1 = tool:WaitForChild("Handle")
+            local tool2 = Players.LocalPlayer.Character:WaitForChild(tool.Name)
+            for i,v in pairs(tool2:GetDescendants()) do
+                if(v:IsA("Part") or v:IsA("MeshPart") or v:IsA("UnionOperation")) then
+                    v.Transparency = 1
+                end
+            end
+            local model2 = v.model:Clone()
+            model2.Anchored = false
+            model2.CFrame = tool2:WaitForChild("Handle").CFrame * v.offset
+            model2.CFrame *= CFrame.Angles(math.rad(0),math.rad(-50),math.rad(0))
+            model2.CFrame *= CFrame.new(.7,0,-.8)
+            model2.Parent = tool2
+            local weld2 = Instance.new("WeldConstraint",model)
+            weld2.Part0 = model2
+            weld2.Part1 = tool2:WaitForChild("Handle")
+        end
+    end
 end)
